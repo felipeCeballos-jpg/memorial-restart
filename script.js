@@ -225,6 +225,8 @@ switchLanguageButton.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', () => {
+  let count = 0;
+  console.log('count: ', ++count);
   const currentLanguage = switchLanguageButton.dataset.language;
   changeLanguage(currentLanguage);
 });
