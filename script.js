@@ -169,9 +169,9 @@ const ruText = [
   'После продолжительной болезни умерла дома в кругу родных.',
 ];
 
-window.addEventListener('load', () => {
+/* window.addEventListener('load', () => {
   document.querySelector('.loader').style.display = 'none';
-});
+}); */
 
 function changeLanguage(language) {
   const imageElements = document.querySelectorAll('.changeable-img');
