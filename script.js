@@ -177,9 +177,9 @@ function changeLanguage(language) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
 
-  const isMobile = window.innerWidth < 800;
+  const isMobile = window.innerWidth <= 800;
   const isTablet =
-    window.innerWidth >= 800 && window.innerWidth < 1366;
+    window.innerWidth >= 801 && window.innerWidth < 1366;
 
   const currentText = language === 'russian' ? ruText : enText;
 
