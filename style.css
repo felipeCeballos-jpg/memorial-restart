@@ -354,11 +354,13 @@ p {
 /* EXTRAS */
 .chamomille {
   position: relative;
-  width: 244px;
+  /* width: 244px; */
+  height: 462px;
   margin-top: -700px;
   margin-bottom: 250px;
   align-self: end;
-  margin-right: -250px;
+  /* margin-right: -250px; */
+  right: -507px;
   z-index: 1;
 }
 
@@ -566,7 +568,8 @@ p {
   }
 
   .chamomille {
-    top: -500px;
+    bottom: 500px;
+    left: 185px;
   }
 
   /* WEDDING */
