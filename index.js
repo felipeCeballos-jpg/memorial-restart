@@ -169,54 +169,6 @@ export const ruText = [
   'После продолжительной болезни умерла дома в кругу родных.',
 ];
 
-const memoize = (fn) => {
-  const cache = {};
-  return (...args) => {
-    const key = JSON.stringify(args);
-    console.log({ cache: cache[key] });
-    if (cache[key]) {
-      return cache[key];
-    }
-    const result = fn(...args);
-    console.log({ result });
-    cache[key] = result;
-    return result;
-  };
-};
-
-const getRussianImages = (isTablet, isMobile) => {
-  if (isTablet) {
-    return ruLangTab;
-  } else if (isMobile) {
-    return ruLangMob;
-  } else {
-    return ruLang;
-  }
-};
-
-const getEnglishImages = (isTablet, isMobile) => {
-  if (isTablet) {
-    return enLangTab;
-  } else if (isMobile) {
-    return enLangMob;
-  } else {
-    return enLang;
-  }
-};
-
-const memoizedGetRussianImages = memoize(getRussianImages);
-const memoizedGetEnglishImages = memoize(getEnglishImages);
-console.log({ memoizedGetEnglishImages });
-console.log({ memoizedGetRussianImages });
-
-const getLanguageImages = (language, isTablet, isMobile) => {
-  if (language === 'russian') {
-    return memoizedGetRussianImages(isTablet, isMobile);
-  } else {
-    return memoizedGetEnglishImages(isTablet, isMobile);
-  }
-};
-
 export function changeLanguage(language) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
@@ -231,7 +183,7 @@ export function changeLanguage(language) {
     text.innerHTML = currentText[index];
   });
 
-  /*   const currentImages =
+  const currentImages =
     language === 'russian'
       ? isTablet
         ? ruLangTab
@@ -242,13 +194,7 @@ export function changeLanguage(language) {
       ? enLangTab
       : isMobile
       ? enLangMob
-      : enLang; */
-
-  const currentImages = getLanguageImages(
-    language,
-    isTablet,
-    isMobile
-  );
+      : enLang;
 
   imageElements.forEach((image, index) => {
     image.src = currentImages[index];
