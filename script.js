@@ -26,6 +26,11 @@ switchLanguageButton.addEventListener('click', () => {
   switchLanguageButton.dataset.language = currentLanguage;
 });
 
+window.addEventListener('resize', () => {
+  const currentLanguage = switchLanguageButton.dataset.language;
+  changeLanguage(currentLanguage);
+});
+
 function scrollAction() {
   /*  document.querySelectorAll('.scroll-action').forEach((item) => {
     addObserver(item, 'right');
