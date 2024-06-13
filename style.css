@@ -11,8 +11,8 @@
 } */
 /* Base Styles */
 body {
-  /* background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');*/
-  background-image: url('./assets/bg.png');
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');
+  /* background-image: url('./assets/bg.png'); */
   background-color: #f1e7d1;
   background-position-x: center;
   display: flex;
@@ -866,7 +866,7 @@ p {
 @media only screen and (min-width: 1367px) {
   .navbook {
     max-width: 1196px;
-    margin-botton: 0 !important;
+    /* margin-botton: 0 !important; */
     margin-bottom: -500px;
   }
 
