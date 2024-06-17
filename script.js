@@ -74,7 +74,7 @@ function changeLanguage(
         }
       });
     },
-    { rootMargin: '200px' }
+    { rootMargin: '500px' }
   );
 
   imageElements.forEach((image) => {
