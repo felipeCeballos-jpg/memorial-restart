@@ -9,14 +9,14 @@ import {
   enLangMob,
 } from './index.js';
 
-// Definir los media queries
+// Set media queries
 const mqlMobile = window.matchMedia('(max-width: 800px)');
 const mqlTablet = window.matchMedia(
   '(min-width: 801px) and (max-width: 1366px)'
 );
 const mqlDesktop = window.matchMedia('(min-width: 1367px)');
 
-// Set Languaje
+// Set Language
 document.getElementById('language-selector').dataset.language =
   'russian';
 
@@ -26,13 +26,16 @@ window.addEventListener('load', () => {
   document.querySelector('.loader').style.display = 'none';
 });
 
-/*
-  Debemos de revisar esta funcion cuidadosamente para a ver si: 
-    1. concuerda con los media queries de css. 
-    2. Saber si esta funcionando como hemos escrito el codigo.
-    3. Estar seguros de todo
-*/
-function adjustImageSizes(language, isMobile, isTablet) {
+window.addEventListener('DOMContentLoaded', () => {
+  changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
+  scrollAction();
+});
+
+function changeLanguage(
+  language,
+  isMobile = false,
+  isTablet = false
+) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
 
@@ -55,33 +58,27 @@ function adjustImageSizes(language, isMobile, isTablet) {
     ];
 
   const observer = new IntersectionObserver(
-    (entries) => {
+    (entries, observe) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const image = entry.target;
           const index = Array.from(imageElements).indexOf(image);
-          let attempt = 1;
           image.src = currentResource.images[index];
           image.onload = () => {
             image.style.opacity = 1;
           };
           image.onerror = () => {
-            if (attempt <= 3) {
-              // Intentar cargar la imagen hasta 3 veces
-              image.src =
-                currentResource.images[index] + '?attempt=' + attempt; // Añadir parámetro para evitar cache
-              attempt++;
-            }
+            console.log('We have an error, ', entry.target);
           };
-          observer.unobserve(image);
+          observe.unobserve(image);
         }
       });
     },
-    { rootMargin: '50px 0px', threshold: 0.01 }
+    { rootMargin: '500px' }
   );
 
   imageElements.forEach((image) => {
-    image.style.opacity = 0; // Establece la opacidad a 0 para iniciar la transición
+    image.style.opacity = 0;
     observer.observe(image);
   });
 
@@ -95,8 +92,6 @@ function adjustImageSizes(language, isMobile, isTablet) {
   });
 }
 
-adjustImageSizes('russian', mqlMobile.matches, mqlTablet.matches);
-
 const switchLanguageButton = document.getElementById(
   'language-selector'
 );
@@ -106,8 +101,8 @@ switchLanguageButton.addEventListener('click', () => {
     switchLanguageButton.dataset.language === 'russian'
       ? 'english'
       : 'russian';
-  //changeLanguage(currentLanguage);
-  adjustImageSizes(
+
+  changeLanguage(
     currentLanguage,
     mqlMobile.matches,
     mqlTablet.matches
@@ -116,27 +111,57 @@ switchLanguageButton.addEventListener('click', () => {
   switchLanguageButton.dataset.language = currentLanguage;
 });
 
-// Añadir event listeners a los media queries
-mqlMobile.addEventListener('change', () => {
-  adjustImageSizes(
+mqlMobile.addEventListener('change', (event) => {
+  console.log('Mobile event: ', event);
+  changeLanguage(
     switchLanguageButton.dataset.language,
-    mqlMobile.matches,
-    mqlTablet.matches
+    event.matches,
+    false
   );
 });
 
-mqlTablet.addEventListener('change', () => {
-  adjustImageSizes(
+mqlTablet.addEventListener('change', (event) => {
+  console.log('Tablet event: ', event);
+  changeLanguage(
     switchLanguageButton.dataset.language,
-    mqlMobile.matches,
-    mqlTablet.matches
+    false,
+    event.matches
   );
 });
 
-mqlDesktop.addEventListener('change', () => {
-  adjustImageSizes(
-    switchLanguageButton.dataset.language,
-    mqlMobile.matches,
-    mqlTablet.matches
-  );
+mqlDesktop.addEventListener('change', (event) => {
+  console.log('Desktop event: ', event);
+  changeLanguage(switchLanguageButton.dataset.language);
 });
+
+/*
+  Animation
+*/
+
+function scrollAction() {
+  document.querySelectorAll('.scroll-action').forEach((item) => {
+    addObserver(item, 'right');
+  });
+
+  document.querySelectorAll('.scroll-action-left').forEach((item) => {
+    addObserver(item, 'left');
+  });
+}
+
+function addObserver(item, side) {
+  let observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(`scroll-active-${side}`);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      rootMargin: '0px 50px',
+    }
+  );
+
+  observer.observe(item);
+}

@@ -168,35 +168,3 @@ export const ruText = [
   'Золотая<br> свадьба',
   'После продолжительной болезни умерла дома в кругу родных.',
 ];
-
-export function changeLanguage(language) {
-  const imageElements = document.querySelectorAll('.changeable-img');
-  const textElements = document.querySelectorAll('.changeable-txt');
-
-  const isMobile = window.innerWidth <= 800;
-  const isTablet =
-    window.innerWidth >= 801 && window.innerWidth < 1366;
-
-  const currentText = language === 'russian' ? ruText : enText;
-
-  textElements.forEach((text, index) => {
-    text.innerHTML = currentText[index];
-  });
-
-  const currentImages =
-    language === 'russian'
-      ? isTablet
-        ? ruLangTab
-        : isMobile
-        ? ruLangMob
-        : ruLang
-      : isTablet
-      ? enLangTab
-      : isMobile
-      ? enLangMob
-      : enLang;
-
-  imageElements.forEach((image, index) => {
-    image.src = currentImages[index];
-  });
-}

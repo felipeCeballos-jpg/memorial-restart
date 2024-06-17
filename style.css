@@ -11,8 +11,8 @@
 } */
 /* Base Styles */
 body {
-  /*  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp'); */
-  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png');
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');
+  /* background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png'); */
   background-color: #f1e7d1;
   background-position-x: center;
   display: flex;
@@ -366,6 +366,7 @@ p {
   /* margin-right: -250px; */
   right: -507px;
   z-index: 1;
+  transform: translateX(20%);
 }
 
 .ball-toy {
@@ -375,6 +376,7 @@ p {
   right: 800px;
   width: 884px;
   z-index: 0;
+  transform: translateX(-10%);
 }
 
 .passport {
@@ -382,6 +384,7 @@ p {
   width: 750px;
   margin-top: -940px;
   left: 1100px;
+  transform: translateX(20%);
 }
 
 .lottery-ticket {
@@ -389,6 +392,33 @@ p {
   width: 1038px;
   margin-top: -1800px;
   right: 870px;
+  transform: translateX(-10%);
+}
+
+.scroll-active-left {
+  animation: 0.7s linear 0s forwards slideLeft;
+}
+
+.scroll-active-right {
+  animation: 0.7s linear 0s forwards slideRight;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Media Queries */
