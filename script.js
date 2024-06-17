@@ -112,7 +112,6 @@ switchLanguageButton.addEventListener('click', () => {
 });
 
 mqlMobile.addEventListener('change', (event) => {
-  console.log('Mobile event: ', event);
   changeLanguage(
     switchLanguageButton.dataset.language,
     event.matches,
@@ -121,7 +120,6 @@ mqlMobile.addEventListener('change', (event) => {
 });
 
 mqlTablet.addEventListener('change', (event) => {
-  console.log('Tablet event: ', event);
   changeLanguage(
     switchLanguageButton.dataset.language,
     false,
@@ -130,7 +128,6 @@ mqlTablet.addEventListener('change', (event) => {
 });
 
 mqlDesktop.addEventListener('change', (event) => {
-  console.log('Desktop event: ', event);
   changeLanguage(switchLanguageButton.dataset.language);
 });
 
