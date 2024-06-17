@@ -69,6 +69,7 @@ function changeLanguage(
           };
           image.onerror = () => {
             console.log('We have an error, ', entry.target);
+            image.src = currentResource.images[index];
           };
           observe.unobserve(image);
         }
