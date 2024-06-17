@@ -396,11 +396,11 @@ p {
 }
 
 .scroll-active-left {
-  animation: 0.7s linear 0s forwards slideLeft;
+  animation: 1s linear 0s forwards slideLeft;
 }
 
 .scroll-active-right {
-  animation: 0.7s linear 0s forwards slideRight;
+  animation: 1s linear 0s forwards slideRight;
 }
 
 @keyframes slideRight {
