@@ -157,7 +157,7 @@ function addObserver(item, side) {
       });
     },
     {
-      rootMargin: '0px 50px',
+      rootMargin: '0px',
     }
   );
 
