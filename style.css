@@ -21,6 +21,7 @@ html,
 body {
   height: 100%;
   background-color: #f1e7d1;
+  overflow-x: hidden;
 }
 main {
   background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');
@@ -32,7 +33,6 @@ main {
   background-size: auto 100%;
   background-repeat: no-repeat;
   padding: 8px;
-  overflow-x: hidden;
   font-family: 'MADE Likes Slab';
   font-weight: 100;
   color: #282727;
