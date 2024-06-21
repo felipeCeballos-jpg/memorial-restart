@@ -4,11 +4,6 @@
   src: url('assets/fonts/MADE-Likes-Slab.otf');
 }
 
-/* * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-} */
 /* Base Styles */
 
 * {
@@ -17,25 +12,54 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
-  background-color: #f1e7d1;
-  overflow-x: hidden;
 }
-main {
+
+/* body {
+  min-height: 100%;
   background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');
-  /* background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png'); */
-  /*  background-color: #f1e7d1; */
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png');
+  background-color: #f1e7d1;
   background-position-x: center;
+  background-size: auto auto;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  padding: 8px;
+  padding: 8px 8px 0px 8px;
+  color: #282727;
   font-family: 'MADE Likes Slab';
   font-weight: 100;
+  overflow-x: hidden;
+  border: 2px solid red;
+} */
+
+body {
+  min-height: 100%;
+  background-color: #f1e7d1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 0 8px;
   color: #282727;
+  font-family: 'MADE Likes Slab';
+  font-weight: 100;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bgNoOriginal.webp');
+  background-position: center top;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .loader {
@@ -44,6 +68,7 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-color: #ebd2ad;
   display: flex;
   justify-content: center;
@@ -89,9 +114,8 @@ p {
   -moz-user-select: none;
   -webkit-user-select: none;
   /* transition: all 0.2s ease-in-out; */
-  transition: opacity 0.5s ease-in-out; /* Suaviza la transición de la opacidad */
-  opacity: 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* ajuste fino de la curva de transición */
-  /*opacity: 1;  Estado inicial de la opacidad */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .language-selector {
