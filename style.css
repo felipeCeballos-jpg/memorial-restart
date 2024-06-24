@@ -341,11 +341,12 @@ p {
 .pages {
   display: flex;
   position: absolute;
+  bottom: 15px;
 }
 
 .navbook {
   width: 80vw;
-  margin-bottom: -7vw;
+  margin-bottom: 0px;
   margin-left: -4vmin;
   z-index: 2;
 }
@@ -499,8 +500,8 @@ p {
   }
 
   .navbook {
-    width: 120vmin !important;
-    margin-bottom: -7vmin;
+    width: 110vmin !important;
+    /*  margin-bottom: -7vmin; */
     margin-left: -10vmin !important;
     z-index: 2;
   }
@@ -513,6 +514,7 @@ p {
 
   .pages {
     margin-left: -9vmin !important;
+    bottom: 4px;
   }
 
   .section-birth {
@@ -943,12 +945,12 @@ p {
   .navbook {
     max-width: 1196px;
     /* margin-botton: 0 !important; */
-    margin-bottom: -500px;
+    /*  margin-bottom: -500px; */
   }
 
   .pages img {
     margin: 0;
-    margin-bottom: -800px;
+    /*  padding-bottom: -800px; */
   }
 
   .milestones {
