@@ -45,6 +45,9 @@ body::before {
 }
 
 .loader {
+  display: none;
+}
+/* .loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,7 +64,7 @@ body::before {
 body .loader img {
   height: 16rem;
   width: 16rem;
-}
+} */
 
 h2 {
   font-size: 2.7em;
@@ -258,11 +261,68 @@ p {
 .section-retirement {
   display: flex;
   flex-direction: column;
+  border: 2px solid blue;
 }
 
+.retirement-image {
+  position: relative;
+  margin-top: 350px;
+}
+
+.retirement-carousel {
+  width: 732px;
+  height: 775px;
+  background: #e7e5e1;
+  padding: 30px 30px 0px 30px;
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  transform: rotate(-1deg);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+}
+
+.carousel-items {
+  height: 80.5%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none; /* Hide all items initially */
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item.carousel-active {
+  display: block; /* Show the active item */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px 25px;
+  height: 19.5%;
+}
+
+.carousel-control {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 1.8vw; /* Responsive font size */
+  cursor: pointer;
+  margin: 0 10px;
+}
 .retirement {
   width: 1037px;
-  margin-top: 350px;
+  /*  margin-top: 350px; */
   margin-left: 0px;
 }
 
@@ -514,7 +574,26 @@ p {
   }
 
   .section-retirement {
+    position: relative;
     margin-bottom: 2rem;
+  }
+
+  .retirement-carousel {
+    max-width: 900px !important;
+    width: 100%;
+    max-height: 48% !important;
+    height: 100%;
+    z-index: 1;
+    left: -15px;
+    top: 45vmin;
+  }
+
+  .controls {
+    height: 19.5% !important;
+  }
+  .carousel-control img {
+    display: block;
+    width: 14vmin !important;
   }
 
   .section-twentynineteen {
@@ -727,6 +806,17 @@ p {
     width: 100vw !important;
   }
 
+  .retirement-image {
+    margin-top: 0px;
+  }
+
+  .retirement-carousel {
+    max-width: 511px;
+    max-height: 541px;
+    left: 21px;
+    z-index: 2;
+  }
+
   .retirement {
     position: relative;
     width: 872px;
@@ -889,6 +979,11 @@ p {
   .gs-text {
     top: 40px;
     left: -340px;
+  }
+
+  .retirement-carousel {
+    max-width: 443px;
+    max-height: 472px;
   }
 
   .retirement {
