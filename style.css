@@ -44,10 +44,10 @@ body::before {
   opacity: 0.9;
 }
 
-.loader {
-  display: none;
-}
 /* .loader {
+  display: none;
+} */
+.loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -64,8 +64,7 @@ body::before {
 body .loader img {
   height: 16rem;
   width: 16rem;
-} */
-
+}
 h2 {
   font-size: 2.7em;
   font-weight: 100;
@@ -261,7 +260,6 @@ p {
 .section-retirement {
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
 }
 
 .retirement-image {

@@ -20,11 +20,11 @@ const mqlDesktop = window.matchMedia('(min-width: 1367px)');
 document.getElementById('language-selector').dataset.language =
   'russian';
 
-/* console.time('Loading time');
+console.time('Loading time');
 window.addEventListener('load', () => {
   console.timeEnd('Loading time');
   document.querySelector('.loader').style.display = 'none';
-}); */
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
