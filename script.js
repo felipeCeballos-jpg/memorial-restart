@@ -166,7 +166,7 @@ document
   });
 
 document
-  .querySelector('.carousel-control.carousel-controlprev')
+  .querySelector('.carousel-control.carousel-control-prev')
   .addEventListener('click', () => {
     items[activeIndex].classList.remove('carousel-active');
     activeIndex = (activeIndex - 1 + items.length) % items.length;
