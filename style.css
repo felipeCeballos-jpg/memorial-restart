@@ -258,37 +258,42 @@ p {
 
 /* RETIREMENT */
 .section-retirement {
+  position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.retirement-image {
-  position: relative;
   margin-top: 350px;
 }
 
+.flex-retirement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+  gap: 50px;
+  margin-top: 20px;
+}
+
 .retirement-carousel {
-  width: 732px;
-  height: 775px;
-  background: #e7e5e1;
-  padding: 30px 30px 0px 30px;
-  position: absolute;
-  top: 16px;
-  left: 21px;
-  transform: rotate(-1deg);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  border: 2px solid transparent;
+  display: grid;
+  background-image: url('./assets/Polaroid mockup3@2x.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .carousel-items {
-  height: 80.5%;
+  position: relative;
+  display: inherit;
+  /*  background-color: red; */
+  /* margin: 46px 47px 0px 47px; */
+  margin: 54px 61px 0px 63px;
+  width: 653px;
+  height: 589px;
+  transform: rotate(-1deg);
   overflow: hidden;
 }
 
 .carousel-item {
   display: none; /* Hide all items initially */
-  width: 100%;
-  height: 100%;
 }
 
 .carousel-item.carousel-active {
@@ -303,31 +308,73 @@ p {
 
 .controls {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  text-align: center;
-  padding: 20px 25px;
-  height: 19.5%;
+  align-items: center;
+  /* margin: 10px 39px 21px 38px; */
+  margin: 10px 61px 28px 63px;
+  transform: rotate(-1deg);
 }
 
 .carousel-control {
   background-color: transparent;
   border: none;
   color: black;
-  font-size: 1.8vw; /* Responsive font size */
   cursor: pointer;
   margin: 0 10px;
+  width: 120px;
+  height: 116px;
 }
+
+.carousel-control:hover {
+  background-image: url('./assets/arrow choose@2x.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.timeline
+  .flex-retirement
+  .retirement-carousel
+  .controls
+  .carousel-control
+  img {
+  display: block;
+  margin: auto !important;
+}
+
+.carousel-control #arrowLeftButton {
+  width: 99px;
+  height: 36px;
+}
+
+.carousel-control .arrowRightButton {
+  width: 79px;
+  height: 32px;
+}
+
+.timeline
+  .flex-retirement
+  .retirement-carousel
+  .controls
+  .changeable-img {
+  display: block;
+  width: 215px;
+  height: 65px;
+}
+
 .retirement {
-  width: 1037px;
-  /*  margin-top: 350px; */
-  margin-left: 0px;
+  content: url('./assets/lifeline@3x.png');
+  width: 300px;
+  margin-top: -157px;
+  margin-left: 649px;
 }
 
 .rrs-text {
   position: relative;
-  margin-top: -860px;
-  margin-left: 800px;
+  margin-top: 120px;
+  /*  margin-left: 800px; */
   width: 300px;
 }
 
@@ -344,7 +391,7 @@ p {
 
 .gws-text {
   position: relative;
-  margin-top: 500px;
+  margin-top: 36px;
   margin-left: 300px;
 }
 
@@ -459,9 +506,9 @@ p {
 }
 
 .passport {
-  position: relative;
+  position: absolute;
   width: 750px;
-  margin-top: -940px;
+  margin-top: -283px;
   left: 1100px;
   transform: translateX(20%);
 }
@@ -501,7 +548,16 @@ p {
 }
 
 /* Media Queries */
+@media only screen and (max-width: 500px) {
+  .rrs-text h2 {
+    bottom: 173vmin !important;
+  }
+}
+
 @media only screen and (max-width: 800px) {
+  body {
+    padding: 0px;
+  }
   .non-mob {
     display: none;
   }
@@ -571,27 +627,89 @@ p {
     margin-bottom: -9rem;
   }
 
+  /* RETIREMENT */
   .section-retirement {
     position: relative;
     margin-bottom: 2rem;
+    margin-top: 21vmin;
+    padding: 0px;
   }
 
-  .retirement-carousel {
-    max-width: 900px !important;
+  .flex-retirement {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 0px;
+  }
+
+  .rrs-text {
+    width: 100% !important;
+    margin-top: 0px;
+  }
+
+  .rrs-text h2 {
     width: 100%;
-    max-height: 48% !important;
-    height: 100%;
-    z-index: 1;
-    left: -15px;
-    top: 45vmin;
+    position: absolute;
+    /* top: -110vmin; */
+    bottom: 165vmin;
+    font-size: 5.9vw;
+    text-align: center;
+  }
+  .rrs-text h2 br {
+    display: none;
   }
 
-  .controls {
-    height: 19.5% !important;
+  .rrs-text p {
+    /*  max-width: 610px; */
+    width: 100%;
+    text-align: left;
+    font-size: 5.9vw;
+    padding-left: 3vmin;
+  }
+  .timeline .retirement {
+    position: relative;
+    top: -18vmin;
+    left: 1vmin;
+    content: url('./assets/lifeline@1x.png');
+    max-width: 56vmin !important;
+    order: -1;
+  }
+
+  .retirement-carousel .carousel-items {
+    width: 84vmin !important;
+    height: 68.092vmin !important;
+    margin: 6.243vmin 7.9vmin 0px 7.9vmin !important;
+  }
+
+  .retirement-carousel .controls {
+    margin: 2.156vmin 7.9vmin 4.7vmin 7.9vmin !important;
+  }
+
+  .retirement-carousel .controls .carousel-control {
+    width: 16vmin;
+    height: 13.41vmin;
+  }
+
+  .controls .carousel-control .arrowRightButton {
+    width: 9.133vmin !important;
+    height: 3.699vmin !important;
+  }
+
+  .controls .carousel-control #arrowLeftButton {
+    width: 11.445vmin !important;
+    height: 4.162vmin !important;
+  }
+
+  .timeline
+    .flex-retirement
+    .retirement-carousel
+    .controls
+    .changeable-img {
+    width: 24.855vmin !important;
+    height: 7.514vmin !important;
   }
   .carousel-control img {
     display: block;
-    width: 14vmin !important;
+    width: 11.5vmin !important;
   }
 
   .section-twentynineteen {
@@ -802,29 +920,38 @@ p {
     align-items: center;
     padding: 0 5vw 0 5vw !important;
     width: 100vw !important;
-  }
-
-  .retirement-image {
     margin-top: 0px;
   }
 
-  .retirement-carousel {
-    max-width: 511px;
-    max-height: 541px;
-    left: 21px;
-    z-index: 2;
+  .flex-retirement {
+    margin-top: 0px;
+    gap: 40px;
   }
 
-  .retirement {
+  .carousel-items {
+    width: 574px;
+    height: 517px;
+    margin: 50px 54px 0px 55px;
+  }
+
+  .retirement-carousel .controls {
+    margin: 10px 54px 28px 55px;
+  }
+
+  .timeline .retirement {
     position: relative;
-    width: 872px;
+    content: url('./assets/lifeline@2x.png');
+    width: 772px;
+    margin-top: -123px !important;
+    margin-left: 55px !important;
   }
 
   .rrs-text {
-    position: relative;
+    /*  position: relative; */
     width: 300px;
-    top: 190px;
-    left: -110px;
+    margin-top: 50px;
+    /*  top: 190px;
+    left: -110px; */
   }
 
   /* GOLDEN WEDDING */
@@ -845,6 +972,7 @@ p {
     position: relative;
     top: -870px;
     left: -480px;
+    margin-top: 880px;
   }
 
   .lottery-ticket {
@@ -858,7 +986,7 @@ p {
     align-items: center;
     padding: 0 5vw 0 5vw !important;
     width: 100vw !important;
-    margin-top: -410px;
+    margin-top: -40px;
   }
 
   .twentynineteen {
@@ -979,18 +1107,48 @@ p {
     left: -340px;
   }
 
-  .retirement-carousel {
-    max-width: 443px;
-    max-height: 472px;
+  /* RETIREMENT */
+  .retirement-carousel .carousel-items {
+    width: 375px;
+    height: 313px;
+    margin: 31px 38px 0px 39px;
   }
 
-  .retirement {
-    width: 763px;
+  .retirement-carousel .controls {
+    margin: 7px 38px 16px 39px;
+  }
+
+  .controls .carousel-control {
+    width: 105px;
+    height: 70px;
+    margin: 0px;
+  }
+
+  .controls .carousel-control #arrowLeftButton {
+    width: 59px;
+    height: 22px;
+  }
+
+  .controls .carousel-control .arrowRightButton {
+    width: 48px;
+    height: 20px;
+  }
+
+  .timeline
+    .flex-retirement
+    .retirement-carousel
+    .controls
+    .changeable-img {
+    width: 133px;
+    height: 40px;
+  }
+
+  .timeline .retirement {
+    max-width: 763px;
+    width: 100%;
   }
 
   .rrs-text {
-    top: 280px;
-    left: -150px;
     width: 270px;
   }
 

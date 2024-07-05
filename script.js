@@ -41,12 +41,12 @@ function changeLanguage(
 
   const localizedContent = {
     russian: {
-      mobile: { images: ruLangMob, texts: [] },
+      mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
       tablet: { images: ruLangTab, texts: ruText },
       default: { images: ruLang, texts: ruText },
     },
     english: {
-      mobile: { images: enLangMob, texts: [] },
+      mobile: { images: enLangMob, texts: [enText[11], enText[12]] },
       tablet: { images: enLangTab, texts: enText },
       default: { images: enLang, texts: enText },
     },
@@ -84,12 +84,30 @@ function changeLanguage(
   });
 
   textElements.forEach((text, index) => {
-    text.style.display = currentResource.texts.length
-      ? 'block'
-      : 'none';
-    if (currentResource.texts.length) {
+    const retirementTitleIndex = 11;
+    const retirementTextIndex = 12;
+
+    if (currentResource.texts.length === 2) {
+      if (index === retirementTitleIndex) {
+        text.style.display = 'block';
+        text.innerHTML = currentResource.texts[0];
+      } else if (index === retirementTextIndex) {
+        text.style.display = 'block';
+        text.innerHTML = currentResource.texts[1];
+      } else {
+        text.style.display = 'none';
+      }
+    } else {
+      text.style.display = 'block';
       text.innerHTML = currentResource.texts[index];
     }
+    /* text.style.display = currentResource.texts.length
+      ? 'block'
+      : 'none';
+    console.log({ text });
+    if (currentResource.texts.length) {
+      text.innerHTML = currentResource.texts[index];
+    } */
   });
 }
 
@@ -131,6 +149,29 @@ mqlTablet.addEventListener('change', (event) => {
 mqlDesktop.addEventListener('change', (event) => {
   changeLanguage(switchLanguageButton.dataset.language);
 });
+
+/*
+  Carousel
+*/
+
+const items = document.querySelectorAll('.carousel-item');
+let activeIndex = 0; // Start with the first item active
+
+document
+  .querySelector('.carousel-control.carousel-control-next')
+  .addEventListener('click', () => {
+    items[activeIndex].classList.remove('carousel-active');
+    activeIndex = (activeIndex + 1) % items.length;
+    items[activeIndex].classList.add('carousel-active');
+  });
+
+document
+  .querySelector('.carousel-control.carousel-controlprev')
+  .addEventListener('click', () => {
+    items[activeIndex].classList.remove('carousel-active');
+    activeIndex = (activeIndex - 1 + items.length) % items.length;
+    items[activeIndex].classList.add('carousel-active');
+  });
 
 /*
   Animation
