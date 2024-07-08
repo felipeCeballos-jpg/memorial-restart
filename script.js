@@ -155,23 +155,60 @@ mqlDesktop.addEventListener('change', (event) => {
 */
 
 const items = document.querySelectorAll('.carousel-item');
+const [carouselLeftBtn, carouselRightBtn] = document.querySelectorAll(
+  '.carousel-control'
+);
 let activeIndex = 0; // Start with the first item active
 
-document
-  .querySelector('.carousel-control.carousel-control-next')
-  .addEventListener('click', () => {
-    items[activeIndex].classList.remove('carousel-active');
-    activeIndex = (activeIndex + 1) % items.length;
-    items[activeIndex].classList.add('carousel-active');
-  });
+// carousel functionality
+carouselLeftBtn.addEventListener('click', () => {
+  items[activeIndex].classList.remove('carousel-active');
+  activeIndex = (activeIndex + 1) % items.length;
+  items[activeIndex].classList.add('carousel-active');
+});
 
-document
-  .querySelector('.carousel-control.carousel-control-prev')
-  .addEventListener('click', () => {
-    items[activeIndex].classList.remove('carousel-active');
-    activeIndex = (activeIndex - 1 + items.length) % items.length;
-    items[activeIndex].classList.add('carousel-active');
-  });
+carouselRightBtn.addEventListener('click', () => {
+  items[activeIndex].classList.remove('carousel-active');
+  activeIndex = (activeIndex - 1 + items.length) % items.length;
+  items[activeIndex].classList.add('carousel-active');
+});
+
+/*
+  Dashes functionality
+
+  - add background image
+  - remove background image
+
+*/
+
+// Carousel Left Button
+carouselLeftBtn.addEventListener('pointerdown', () => {
+  console.log('Down');
+  addBackgroundImage(carouselLeftBtn);
+});
+carouselLeftBtn.addEventListener('pointerup', () => {
+  console.log('Up');
+  removeBackgroundImage(carouselLeftBtn);
+});
+
+// Carousel Right Button
+carouselRightBtn.addEventListener('pointerdown', () => {
+  addBackgroundImage(carouselRightBtn);
+});
+carouselRightBtn.addEventListener('pointerup', () => {
+  removeBackgroundImage(carouselRightBtn);
+});
+
+function addBackgroundImage(item) {
+  item.style.backgroundImage = `url("./assets/arrow choose@2x.webp")`;
+  item.style.backgroundSize = '100%';
+  item.style.backgroundRepeat = 'no-repeat';
+  item.style.backgroundPosition = 'center';
+}
+
+function removeBackgroundImage(item) {
+  item.style.backgroundImage = `none`;
+}
 
 /*
   Animation

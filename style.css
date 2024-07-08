@@ -325,14 +325,16 @@ p {
   margin: 0 10px;
   width: 120px;
   height: 116px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.carousel-control:active {
+/* .carousel-control:active {
   background-image: url('./assets/arrow choose@2x.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 .timeline
   .flex-retirement
