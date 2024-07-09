@@ -186,7 +186,9 @@ carouselLeftBtn.addEventListener('pointerdown', () => {
   addBackgroundImage(carouselLeftBtn);
 });
 carouselLeftBtn.addEventListener('pointerup', () => {
-  removeBackgroundImage(carouselLeftBtn);
+  setTimeout(() => {
+    removeBackgroundImage(carouselLeftBtn);
+  }, 500);
 });
 
 // Carousel Right Button
@@ -194,7 +196,9 @@ carouselRightBtn.addEventListener('pointerdown', () => {
   addBackgroundImage(carouselRightBtn);
 });
 carouselRightBtn.addEventListener('pointerup', () => {
-  removeBackgroundImage(carouselRightBtn);
+  setTimeout(() => {
+    removeBackgroundImage(carouselRightBtn);
+  }, 500);
 });
 
 function addBackgroundImage(item) {
