@@ -183,11 +183,9 @@ carouselRightBtn.addEventListener('click', () => {
 
 // Carousel Left Button
 carouselLeftBtn.addEventListener('pointerdown', () => {
-  console.log('Down');
   addBackgroundImage(carouselLeftBtn);
 });
 carouselLeftBtn.addEventListener('pointerup', () => {
-  console.log('Up');
   removeBackgroundImage(carouselLeftBtn);
 });
 
