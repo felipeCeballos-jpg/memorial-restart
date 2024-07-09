@@ -283,8 +283,7 @@ p {
 .carousel-items {
   position: relative;
   display: inherit;
-  /*  background-color: red; */
-  /* margin: 46px 47px 0px 47px; */
+  background-color: black;
   margin: 54px 61px 0px 63px;
   width: 653px;
   height: 589px;
@@ -298,6 +297,16 @@ p {
 
 .carousel-item.carousel-active {
   display: block; /* Show the active item */
+  animation: 0.5s linear 0s both fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .carousel-item img {
