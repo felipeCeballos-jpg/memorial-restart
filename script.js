@@ -29,11 +29,6 @@ window.addEventListener('load', () => {
 window.addEventListener('DOMContentLoaded', () => {
   changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
   scrollAction();
-  const carouselImages = document.querySelectorAll(
-    '.carousel-item img'
-  );
-  carouselImages[0].loading = 'eager';
-  carouselImages[1].loading = 'eager';
 });
 
 function changeLanguage(

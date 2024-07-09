@@ -1182,6 +1182,10 @@ p {
     width: 220px;
     left: -250px;
   }
+
+  .passport {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1367px) {
