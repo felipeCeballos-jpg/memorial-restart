@@ -287,6 +287,8 @@ p {
   margin: 54px 61px 0px 63px;
   width: 653px;
   height: 589px;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
   transform: rotate(-1deg);
   overflow: hidden;
 }
