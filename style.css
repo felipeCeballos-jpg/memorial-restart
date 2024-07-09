@@ -282,21 +282,24 @@ p {
 
 .carousel-items {
   position: relative;
-  display: inherit;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   background-color: black;
-  margin: 54px 61px 0px 63px;
+  margin: 48px 60px 0px 61px;
   width: 653px;
-  height: 589px;
+  height: 540px;
   backface-visibility: hidden;
   transform: rotate(-1deg);
   overflow: hidden;
 }
 
 .carousel-item {
-  display: none; /* Hide all items initially */
-  width: 100%;
-  height: 100%;
+  display: none;
+  flex: 1 0 100%;
   backface-visibility: hidden;
+  background-color: transparent;
+  will-change: transform;
 }
 
 .carousel-item.carousel-active {
@@ -314,10 +317,11 @@ p {
 }
 
 .carousel-item img {
+  image-rendering: optimizeQuality;
   width: 100%;
   height: 100%;
+  /*   backface-visibility: hidden; */
   object-fit: cover;
-  image-rendering: crisp-edges;
 }
 
 .controls {
@@ -694,7 +698,7 @@ p {
   .retirement-carousel .carousel-items {
     width: 84vmin !important;
     height: 68.092vmin !important;
-    margin: 6.243vmin 7.9vmin 0px 7.9vmin !important;
+    margin: 6.243vmin 7.8vmin 0px 8vmin !important;
   }
 
   .retirement-carousel .controls {
@@ -947,8 +951,8 @@ p {
 
   .carousel-items {
     width: 574px;
-    height: 517px;
-    margin: 50px 54px 0px 55px;
+    height: 525px;
+    margin: 47px 53px 0px 53px;
   }
 
   .retirement-carousel .controls {
@@ -1130,8 +1134,8 @@ p {
   }
   .retirement-carousel .carousel-items {
     width: 375px;
-    height: 331px;
-    margin: 31px 38px 0px 37.5px;
+    height: 334px;
+    margin: 30px 35px 0px 35px;
   }
 
   .retirement-carousel .controls {
