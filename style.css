@@ -314,7 +314,6 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: optimizeQuality;
   filter: blur(0.5px);
 }
 
