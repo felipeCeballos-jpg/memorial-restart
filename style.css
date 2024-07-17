@@ -290,6 +290,7 @@ p {
   height: 540px;
   transform: rotate(-1deg);
   overflow: hidden;
+  border: 1px solid transparent;
 }
 
 .carousel-item {
