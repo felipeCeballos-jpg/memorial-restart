@@ -288,10 +288,11 @@ p {
   margin: 48px 60px 0px 61px;
   width: 653px;
   height: 540px;
-  /* transform: rotate(-1deg); */
+  transform: rotate(-1deg);
   overflow: hidden;
   /* border: 1px solid transparent; */
   will-change: transform;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-item {
