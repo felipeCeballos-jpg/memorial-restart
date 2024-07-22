@@ -1,0 +1,61 @@
+@media only screen and (min-width: 1367px) {
+  .navbook {
+    max-width: 1196px;
+    /* margin-botton: 0 !important; */
+    /*  margin-bottom: -500px; */
+  }
+
+  .pages img {
+    margin: 0;
+    /*  padding-bottom: -800px; */
+  }
+
+  .milestones {
+    width: 196px !important;
+    height: 100% !important;
+    margin-left: 0px !important;
+    margin-top: 50px !important;
+  }
+
+  .stories {
+    width: 194px !important;
+    height: 100% !important;
+    margin-left: -55px !important;
+    margin-top: 100px !important;
+  }
+
+  .gallery {
+    width: 187px !important;
+    height: 100% !important;
+    margin-left: -90px !important;
+    margin-top: 30px !important;
+  }
+
+  .my-granny {
+    width: 215px !important;
+    height: 100% !important;
+    margin-top: 90px !important;
+    margin-left: -60px !important;
+  }
+
+  .remember {
+    width: 223px !important;
+    height: 100% !important;
+    margin-left: -120px !important;
+    margin-top: 20px !important;
+  }
+
+  .map {
+    width: 207px !important;
+    height: 100% !important;
+    margin-top: 100px !important;
+    margin-left: -70px !important;
+  }
+
+  .nanas-words {
+    width: 183px !important;
+    height: 100% !important;
+    margin-top: 70px !important;
+    margin-left: -50px !important;
+  }
+}

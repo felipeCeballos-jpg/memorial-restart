@@ -116,6 +116,8 @@ p {
 }
 
 .hero-images {
+  width: 1209px;
+  height: 1054px;
   margin-left: 12rem;
 }
 
@@ -323,9 +325,8 @@ p {
 }
  */
 .carousel-item img {
-  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   /* object-position: center; */
   will-change: transform;
@@ -502,10 +503,19 @@ p {
   transform: translateY(-1rem);
 }
 
-/* EXTRAS */
+/* 
+  EXTRAS
+
+  these extra images are created with background instead of the image element because
+  we are not displaying these images on mobile and we don't want to also trigger 
+  a request to those images when they are hidden on mobile. 
+  
+  So this solution allows us to show the images on the right viewport and also trigger the images request
+  when we need it.
+*/
 .chamomille {
   position: relative;
-  /* width: 244px; */
+  width: 445.95px;
   height: 462px;
   margin-top: -700px;
   margin-bottom: 250px;
@@ -516,30 +526,61 @@ p {
   transform: translateX(20%);
 }
 
+.chamomille-image,
+.ball-toy-image,
+.passport-image,
+.lottery-ticket-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.chamomille-image {
+  background-image: url('./assets/daisy.png');
+}
+
 .ball-toy {
   position: relative;
   margin-top: -600px;
   margin-bottom: -450px;
   right: 800px;
   width: 884px;
+  height: 1046px;
   z-index: 0;
   transform: translateX(-10%);
+}
+
+.ball-toy-image {
+  background-image: url('./assets/ball_toy.webp');
 }
 
 .passport {
   position: absolute;
   width: 750px;
+  height: 798px;
   margin-top: -283px;
   left: 1100px;
   transform: translateX(20%);
 }
 
+.passport-image {
+  background-image: url('./assets/passport.webp');
+}
+
 .lottery-ticket {
   position: relative;
   width: 1038px;
+  height: 1264px;
   margin-top: -1800px;
   right: 870px;
   transform: translateX(-10%);
+}
+
+.lottery-ticket-image {
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/lottery.png?fm=webp&h=1264&w=1038');
+  width: 1038px;
+  height: 1264px;
 }
 
 .scroll-active-left {
@@ -736,531 +777,5 @@ p {
 
   .section-twentynineteen {
     margin-bottom: 7rem;
-  }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 1366px) {
-  h2 {
-    font-size: 2.5rem;
-    margin: 31px 0px;
-  }
-
-  p {
-    font-size: 1.3rem;
-  }
-
-  .timeline {
-    padding: 0 50px 0 50px !important;
-  }
-
-  .timeline img {
-    margin: 0 !important;
-  }
-
-  .language-selector {
-    width: 118px;
-    padding-top: 25px;
-  }
-
-  .hero-images {
-    width: 891px;
-  }
-
-  /* BIRTH */
-  .section-birth {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .birth {
-    position: relative;
-    width: 832px;
-    left: -100px;
-  }
-
-  .bs-text {
-    position: relative;
-    width: 325px;
-    margin-left: 650px;
-    margin-top: -510px;
-  }
-
-  /* BAPTISM */
-  .section-baptism {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .bbs-text {
-    position: relative;
-    width: 321px;
-    margin-left: -500px;
-    margin-top: 120px;
-    margin-bottom: -300px;
-  }
-
-  .baptism {
-    position: relative;
-    width: 1082px;
-  }
-
-  /* SCHOOL */
-  .section-school {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .school {
-    position: relative;
-    width: 905px;
-  }
-
-  .sy-text {
-    position: relative;
-    margin-left: 400px;
-    margin-top: -250px;
-  }
-
-  /* UNIVERSITY */
-  .section-university {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .university {
-    position: relative;
-    width: 730px;
-    right: -5px;
-  }
-
-  .us-text {
-    position: relative;
-    margin-left: -600px;
-    width: 325px;
-    margin-top: 100px;
-    margin-bottom: -380px;
-  }
-
-  .chamomille {
-    bottom: 500px;
-    left: 246px;
-  }
-
-  /* WEDDING */
-  .section-wedding {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .wedding {
-    position: relative;
-    width: 905px;
-    top: -610px;
-  }
-
-  .ws-text {
-    position: relative;
-    width: 300px;
-    top: -410px;
-    left: -130px;
-  }
-
-  /* DAUGHTERS */
-  .section-daughters {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .ds-text {
-    position: relative;
-    margin-top: -220px;
-    margin-left: -450px;
-  }
-
-  .daughters {
-    position: relative;
-    width: 488px;
-    top: -460px;
-    left: 200px;
-  }
-
-  .ball-toy {
-    width: 571px;
-    top: -650px;
-    left: -710px;
-  }
-
-  /* WORK */
-  .section-work {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .work {
-    position: relative;
-    width: 950px;
-    top: -1000px;
-  }
-
-  .rs-text {
-    position: relative;
-    margin-top: -1270px;
-    margin-left: 550px;
-    width: 300px;
-  }
-
-  /* GRANDSON */
-  .section-grandson {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-  }
-
-  .grandson {
-    position: relative;
-    width: 938px;
-    top: -250px;
-    left: -70px;
-  }
-
-  .gs-text {
-    position: relative;
-    top: -10px;
-    left: -450px;
-    margin-bottom: 250px;
-  }
-
-  /* RETIREMENT */
-  .section-retirement {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-    margin-top: 0px;
-  }
-
-  .flex-retirement {
-    margin-top: 0px;
-    gap: 40px;
-  }
-
-  .carousel-items {
-    width: 574px;
-    height: 525px;
-    margin: 47px 53px 0px 53px;
-  }
-
-  .retirement-carousel .controls {
-    margin: 10px 54px 28px 55px;
-  }
-
-  .timeline .retirement {
-    position: relative;
-    content: url('./assets/lifeline@2x.png');
-    width: 772px;
-    margin-top: -123px !important;
-    margin-left: 55px !important;
-  }
-
-  .rrs-text {
-    /*  position: relative; */
-    width: 300px;
-    margin-top: 50px;
-    /*  top: 190px;
-    left: -110px; */
-  }
-
-  /* GOLDEN WEDDING */
-  .section-goldenwedding {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-    height: 761.6px;
-  }
-
-  .goldenwedding {
-    position: relative;
-    width: 861px;
-    top: -1050px;
-  }
-
-  .gws-text {
-    position: relative;
-    top: -870px;
-    left: -480px;
-    margin-top: 880px;
-  }
-
-  .lottery-ticket {
-    position: relative;
-    top: -2000px;
-    left: -992px;
-  }
-
-  /* DEATH */
-  .section-twentynineteen {
-    align-items: center;
-    padding: 0 5vw 0 5vw !important;
-    width: 100vw !important;
-    margin-top: -40px;
-  }
-
-  .twentynineteen {
-    position: relative;
-    width: 994px;
-  }
-
-  .tns-text {
-    position: relative;
-    top: 150px;
-    left: -200px;
-    width: 300px;
-  }
-
-  /* MENU */
-  .section-navbook {
-    margin-bottom: 0 !important;
-  }
-}
-
-@media only screen and (max-width: 1120px) {
-  h2 {
-    font-size: 2.3rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .language-selector {
-    width: 103px;
-    padding-top: 25px;
-  }
-
-  .hero-images {
-    width: 780px;
-  }
-
-  .birth {
-    width: 647px;
-  }
-
-  .bs-text {
-    top: 90px;
-    left: -70px;
-  }
-
-  .baptism {
-    width: 842px;
-    top: 30px;
-  }
-
-  .bbs-text {
-    left: 60px;
-    width: 280px;
-  }
-
-  .school {
-    width: 792px;
-  }
-
-  .sy-text {
-    top: 40px;
-  }
-
-  .university {
-    width: 639px;
-    top: 20px;
-  }
-
-  .us-text {
-    top: -10px;
-    left: 49px;
-    width: 300px;
-  }
-
-  .wedding {
-    top: -590px;
-    width: 792px;
-    left: 40px;
-  }
-
-  .ws-text {
-    top: -300px;
-    left: -160px;
-    width: 280px;
-  }
-
-  .daughters {
-    width: 427px;
-    top: -400px;
-  }
-
-  .ds-text {
-    top: 50px;
-    width: 322px;
-  }
-
-  .work {
-    width: 831px;
-    top: -920px;
-  }
-
-  .rs-text {
-    top: 100px;
-    left: -20px;
-    width: 250px;
-  }
-
-  .grandson {
-    top: -250px;
-    left: -10px;
-    width: 821px;
-  }
-
-  .gs-text {
-    top: 40px;
-    left: -340px;
-  }
-
-  /* RETIREMENT */
-  .flex-retirement {
-    gap: 30px;
-  }
-  .retirement-carousel .carousel-items {
-    width: 375px;
-    height: 338px;
-    margin: 30px 35px 0px 35px;
-  }
-
-  .retirement-carousel .controls {
-    margin: 9px 38px 16px 39px;
-  }
-
-  .controls .carousel-control {
-    width: 105px;
-    height: 70px;
-    margin: 0px;
-  }
-
-  .controls .carousel-control #arrowLeftButton {
-    width: 59px;
-    height: 22px;
-  }
-
-  .controls .carousel-control .arrowRightButton {
-    width: 48px;
-    height: 20px;
-  }
-
-  .timeline
-    .flex-retirement
-    .retirement-carousel
-    .controls
-    .changeable-img {
-    width: 133px;
-    height: 40px;
-  }
-
-  .timeline .retirement {
-    max-width: 763px;
-    width: 100%;
-  }
-
-  .rrs-text {
-    width: 270px;
-  }
-
-  .goldenwedding {
-    width: 754px;
-    top: -1000px;
-    left: -10px;
-  }
-
-  .gws-text {
-    top: -850px;
-    left: -450px;
-  }
-
-  .twentynineteen {
-    width: 870px;
-    top: -50px;
-  }
-
-  .tns-text {
-    width: 220px;
-    left: -250px;
-  }
-
-  .passport {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1367px) {
-  .navbook {
-    max-width: 1196px;
-    /* margin-botton: 0 !important; */
-    /*  margin-bottom: -500px; */
-  }
-
-  .pages img {
-    margin: 0;
-    /*  padding-bottom: -800px; */
-  }
-
-  .milestones {
-    width: 196px !important;
-    height: 100% !important;
-    margin-left: 0px !important;
-    margin-top: 50px !important;
-  }
-
-  .stories {
-    width: 194px !important;
-    height: 100% !important;
-    margin-left: -55px !important;
-    margin-top: 100px !important;
-  }
-
-  .gallery {
-    width: 187px !important;
-    height: 100% !important;
-    margin-left: -90px !important;
-    margin-top: 30px !important;
-  }
-
-  .my-granny {
-    width: 215px !important;
-    height: 100% !important;
-    margin-top: 90px !important;
-    margin-left: -60px !important;
-  }
-
-  .remember {
-    width: 223px !important;
-    height: 100% !important;
-    margin-left: -120px !important;
-    margin-top: 20px !important;
-  }
-
-  .map {
-    width: 207px !important;
-    height: 100% !important;
-    margin-top: 100px !important;
-    margin-left: -70px !important;
-  }
-
-  .nanas-words {
-    width: 183px !important;
-    height: 100% !important;
-    margin-top: 70px !important;
-    margin-left: -50px !important;
   }
 }

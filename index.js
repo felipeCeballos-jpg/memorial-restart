@@ -1,6 +1,6 @@
 export const ruLang = [
   './assets/klubok_en.png',
-  './assets/hero_ru.png',
+  'https://felipeceballos-696179685.imgix.net/assets/hero_ru.png?fm=webp',
   './assets/desktop/rbornf.png',
   './assets/desktop/baptismf.png',
   './assets/desktop/schoolf_ru.png',
@@ -22,7 +22,7 @@ export const ruLang = [
 ];
 export const enLang = [
   './assets/klubok_ru.png',
-  './assets/hero_ru.png',
+  'https://felipeceballos-696179685.imgix.net/assets/hero_en.png?fm=webp',
   './assets/desktop/rbornf.png',
   './assets/desktop/baptismf.png',
   './assets/desktop/schoolf_ru.png',
