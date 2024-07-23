@@ -14,6 +14,7 @@
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -699,7 +700,6 @@ p {
     width: 100vmin;
     margin-bottom: 2rem;
     margin-top: 21vmin;
-    margin-left: -3vmin;
     padding: 0px;
   }
 
@@ -707,6 +707,11 @@ p {
     flex-direction: column;
     gap: 20px;
     margin-top: 0px;
+  }
+
+  .carousel-item img {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .rrs-text {
