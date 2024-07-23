@@ -36,6 +36,7 @@
   .birth {
     position: relative;
     width: 832px;
+    height: 507px;
     left: -100px;
   }
 
@@ -314,6 +315,7 @@
 
   .birth {
     width: 647px;
+    height: 394px;
   }
 
   .bs-text {

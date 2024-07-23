@@ -128,6 +128,8 @@ p {
 }
 
 .birth {
+  width: 1304px;
+  height: 979px;
   margin-top: -260px;
 }
 
@@ -325,8 +327,9 @@ p {
 }
  */
 .carousel-item img {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   /* object-position: center; */
   will-change: transform;
@@ -648,6 +651,7 @@ p {
 
   .timeline img {
     width: 100vmin !important;
+    height: auto !important;
     margin: 0 !important;
     margin-left: -3vmin !important;
   }
@@ -692,8 +696,10 @@ p {
   /* RETIREMENT */
   .section-retirement {
     position: relative;
+    width: 100vmin;
     margin-bottom: 2rem;
     margin-top: 21vmin;
+    margin-left: -3vmin;
     padding: 0px;
   }
 

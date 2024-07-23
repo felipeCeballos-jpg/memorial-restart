@@ -33,18 +33,45 @@
           src="./assets/klubok_rus.png"
           alt="klubok"
         />
-        <img
-          class="hero-images changeable-img"
-          src="https://felipeceballos-696179685.imgix.net/assets/hero_ru.png?fm=webp"
-          alt="russian calendar"
-        />
+        <!-- This is  -->
+        <picture>
+          <source
+            media="(min-width: 801px) and (max-width: 1366px)"
+            srcset="
+              https://felipeceballos-696179685.imgix.net/assets/tablet/hero_ru.png?fm=webp
+            "
+          />
+          <source
+            media="(max-width: 800px)"
+            srcset="./assets/mobile/calendarm_ru2.webp 800w"
+          />
+          <img
+            class="hero-images changeable-img"
+            src="https://felipeceballos-696179685.imgix.net/assets/hero_ru.png?fm=webp"
+            alt="russian calendar"
+          />
+        </picture>
       </div>
       <div class="section-birth timeline">
-        <img
-          class="birth changeable-img"
-          src="./assets/desktop/rbornf.png"
-          alt="grandmother's parents"
-        />
+        <picure>
+          <source
+            media="(max-width: 800px)"
+            srcset="./assets/mobile/m_birth_ru2.webp 800w"
+          />
+          <source
+            media="(max-width: 1366px)"
+            srcset="./assets/tablet/birth.png 832w"
+          />
+          <source
+            media="(max-width: 1120px)"
+            srcset="./assets/tablet/birth.png 647w"
+          />
+          <img
+            class="birth changeable-img"
+            src="./assets/desktop/rbornf.png"
+            alt="grandmother's parents"
+          />
+        </picure>
         <div class="bs-text non-mob">
           <h2>1933</h2>
           <p class="changeable-txt">
@@ -208,6 +235,7 @@
                 <img
                   src="./assets/carousel/carousel-1.jpg"
                   alt="carousel-1"
+                  loading="lazy"
                 />
               </div>
               <div class="carousel-item">
@@ -306,13 +334,6 @@
                 <img
                   src="./assets/carousel/carousel-15.webp"
                   alt="carousel-15"
-                  loading="lazy"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./assets/carousel/carousel-16.webp"
-                  alt="carousel-16"
                   loading="lazy"
                 />
               </div>
