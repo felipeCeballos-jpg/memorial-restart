@@ -67,6 +67,7 @@ function changeLanguage(
           image.onload = () => {
             image.style.opacity = 1;
           };
+
           image.onerror = () => {
             console.log('We have an error, ', entry.target);
             image.src = currentResource.images[index];
@@ -75,7 +76,7 @@ function changeLanguage(
         }
       });
     },
-    { rootMargin: '1000px' }
+    { rootMargin: '500px' }
   );
 
   imageElements.forEach((image) => {
