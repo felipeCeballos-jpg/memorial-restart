@@ -664,6 +664,7 @@ p {
 
   .navbook {
     width: 110vmin !important;
+    height: auto !important;
     /*  margin-bottom: -7vmin; */
     margin-left: -10vmin !important;
     z-index: 2;
