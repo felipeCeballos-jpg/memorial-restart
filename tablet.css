@@ -65,6 +65,7 @@
   .baptism {
     position: relative;
     width: 1082px;
+    height: 462px;
   }
 
   /* SCHOOL */
@@ -77,6 +78,7 @@
   .school {
     position: relative;
     width: 905px;
+    height: 627px;
   }
 
   .sy-text {
@@ -95,6 +97,7 @@
   .university {
     position: relative;
     width: 730px;
+    height: 642px;
     right: -5px;
   }
 
@@ -122,6 +125,7 @@
   .wedding {
     position: relative;
     width: 905px;
+    height: 626px;
     top: -610px;
   }
 
@@ -148,6 +152,7 @@
   .daughters {
     position: relative;
     width: 488px;
+    height: 348px;
     top: -460px;
     left: 200px;
   }
@@ -170,6 +175,7 @@
   .work {
     position: relative;
     width: 950px;
+    height: 744px;
     top: -1000px;
   }
 
@@ -190,6 +196,7 @@
   .grandson {
     position: relative;
     width: 938px;
+    height: 944px;
     top: -250px;
     left: -70px;
   }
@@ -251,6 +258,7 @@
   .goldenwedding {
     position: relative;
     width: 861px;
+    height: 761px;
     top: -1050px;
   }
 
@@ -279,6 +287,7 @@
   .twentynineteen {
     position: relative;
     width: 994px;
+    height: 654px;
   }
 
   .tns-text {
@@ -325,6 +334,7 @@
 
   .baptism {
     width: 842px;
+    height: 360px;
     top: 30px;
   }
 
@@ -335,6 +345,7 @@
 
   .school {
     width: 792px;
+    height: 549px;
   }
 
   .sy-text {
@@ -343,6 +354,7 @@
 
   .university {
     width: 639px;
+    height: 562px;
     top: 20px;
   }
 
@@ -355,6 +367,7 @@
   .wedding {
     top: -590px;
     width: 792px;
+    height: 548px;
     left: 40px;
   }
 
@@ -366,6 +379,7 @@
 
   .daughters {
     width: 427px;
+    height: 305px;
     top: -400px;
   }
 
@@ -376,6 +390,7 @@
 
   .work {
     width: 831px;
+    height: 651px;
     top: -920px;
   }
 
@@ -389,6 +404,7 @@
     top: -250px;
     left: -10px;
     width: 821px;
+    height: 827px;
   }
 
   .gs-text {
@@ -446,6 +462,7 @@
 
   .goldenwedding {
     width: 754px;
+    height: 666px;
     top: -1000px;
     left: -10px;
   }
@@ -457,6 +474,7 @@
 
   .twentynineteen {
     width: 870px;
+    height: 572px;
     top: -50px;
   }
 

@@ -149,6 +149,8 @@ p {
 
 .baptism {
   margin-top: -450px;
+  width: 1330px;
+  height: 558px;
 }
 
 .bbs-text {
@@ -165,6 +167,8 @@ p {
 }
 
 .school {
+  width: 1287px;
+  height: 1061px;
   margin-top: -200px;
   margin-left: 180px;
   z-index: 2;
@@ -184,6 +188,8 @@ p {
 }
 
 .university {
+  width: 1186px;
+  height: 912px;
   margin-top: -480px;
   margin-left: -30px;
   z-index: 1;
@@ -203,6 +209,8 @@ p {
 }
 
 .wedding {
+  width: 1351px;
+  height: 887px;
   margin-top: -210px;
   margin-left: -180px;
 }
@@ -228,6 +236,8 @@ p {
 }
 
 .daughters {
+  width: 674px;
+  height: 484px;
   margin-top: -550px;
   margin-left: 500px;
 }
@@ -236,6 +246,11 @@ p {
 .section-work {
   display: flex;
   flex-direction: column;
+}
+
+.work {
+  width: 1421px;
+  height: 1359px;
 }
 
 .rs-text {
@@ -252,6 +267,8 @@ p {
 }
 
 .grandson {
+  width: 1352px;
+  height: 1280px;
   margin-top: 110px;
   margin-left: -50px;
 }
@@ -411,6 +428,8 @@ p {
 }
 
 .goldenwedding {
+  width: 1391px;
+  height: 1523px;
   margin-top: -200px;
   margin-left: 50px;
 }
@@ -430,6 +449,7 @@ p {
 .twentynineteen {
   margin-top: 350px;
   width: 1286px;
+  height: 737px;
 }
 
 .tns-text {
@@ -683,6 +703,18 @@ p {
 
   .section-birth {
     margin-top: -2rem;
+  }
+
+  .baptism,
+  .school,
+  .university,
+  .wedding,
+  .daughters,
+  .work,
+  .grandson,
+  .goldenwedding,
+  .twentynineteen {
+    height: auto;
   }
 
   .section-daughters {
