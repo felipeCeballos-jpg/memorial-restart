@@ -638,6 +638,16 @@ p {
   }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 800px) {
+  .rrs-text h2 {
+    bottom: 144vmin !important;
+  }
+
+  .rrs-text p {
+    font-size: 2.9vw !important;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   body {
     padding: 0px;
