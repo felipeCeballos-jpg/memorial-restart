@@ -79,9 +79,18 @@ function changeLanguage(
     { rootMargin: '700px' }
   );
 
-  imageElements.forEach((image) => {
+  imageElements.forEach((image, index) => {
     image.style.opacity = 0;
-    observer.observe(image);
+    /* observer.observe(image); */
+    image.src = currentResource.images[index];
+    image.onload = () => {
+      image.style.opacity = 1;
+    };
+
+    image.onerror = () => {
+      console.log('We have an error');
+      image.src = currentResource.images[index];
+    };
   });
 
   textElements.forEach((text, index) => {
