@@ -31,82 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   scrollAction();
 });
 
-/* ChangeLanguage */
-let observer;
-
-function createImageObserver(currentResource, deviceType) {
-  return new IntersectionObserver(
-    (entries, obs) =>
-      handleImagesIntersection(
-        entries,
-        obs,
-        currentResource,
-        deviceType
-      ),
-    {
-      rootMargin: '700px',
-    }
-  );
-}
-
-function handleImagesIntersection(
-  entries,
-  observer,
-  currentResource
-) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      loadImage(entry.target, currentResource);
-      observer.unobserve(entry.target);
-    }
-  });
-}
-
-function loadImage(image, currentResource) {
-  console.log(currentResource);
-  const index = Array.from(
-    document.querySelectorAll('.changeable-img')
-  ).indexOf(image);
-
-  image.src = currentResource.images[index];
-  image.onload = () => image.classList.add('loaded');
-  image.onerror = () => {
-    console.log('Error loading image: ', image.src);
-  };
-}
-
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <=
-      (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-function preLoadImages(images) {
-  images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-}
-
-const localizedContent = {
-  russian: {
-    mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
-    tablet: { images: ruLangTab, texts: ruText },
-    default: { images: ruLang, texts: ruText },
-  },
-  english: {
-    mobile: { images: enLangMob, texts: [enText[11], enText[12]] },
-    tablet: { images: enLangTab, texts: enText },
-    default: { images: enLang, texts: enText },
-  },
-};
-
 function changeLanguage(
   language,
   isMobile = false,
@@ -114,27 +38,61 @@ function changeLanguage(
 ) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
-  console.log('ImageElements: ', imageElements);
-  console.log('TextElements: ', textElements);
 
-  const deviceType = isMobile
-    ? 'mobile'
-    : isTablet
-    ? 'tablet'
-    : 'default';
+  const localizedContent = {
+    russian: {
+      mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
+      tablet: { images: ruLangTab, texts: ruText },
+      default: { images: ruLang, texts: ruText },
+    },
+    english: {
+      mobile: { images: enLangMob, texts: [enText[11], enText[12]] },
+      tablet: { images: enLangTab, texts: enText },
+      default: { images: enLang, texts: enText },
+    },
+  };
 
-  console.log('Device type: ', deviceType);
+  const currentResource =
+    localizedContent[language][
+      isMobile ? 'mobile' : isTablet ? 'tablet' : 'default'
+    ];
 
-  const currentResource = localizedContent[language][deviceType];
-  console.log('Current Resource: ', currentResource);
+  const observer = new IntersectionObserver(
+    (entries, observe) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const image = entry.target;
+          const index = Array.from(imageElements).indexOf(image);
+          image.src = currentResource.images[index];
+          image.onload = () => {
+            image.style.opacity = 1;
+          };
 
-  // Create an new observer
-  observer = createImageObserver(currentResource);
+          image.onerror = () => {
+            console.log('We have an error, ', entry.target);
+            image.src = currentResource.images[index];
+          };
+          observe.unobserve(image);
+        }
+      });
+    },
+    { rootMargin: '700px' }
+  );
 
-  /* // Preload images
-  preLoadImages(currentResource.images[deviceType]); */
+  imageElements.forEach((image, index) => {
+    image.style.opacity = 0;
+    /* observer.observe(image); */
+    image.src = currentResource.images[index];
+    image.onload = () => {
+      image.style.opacity = 1;
+    };
 
-  // Update Text
+    image.onerror = () => {
+      console.log('We have an error');
+      image.src = currentResource.images[index];
+    };
+  });
+
   textElements.forEach((text, index) => {
     const retirementTitleIndex = 11;
     const retirementTextIndex = 12;
@@ -153,17 +111,13 @@ function changeLanguage(
       text.style.display = 'block';
       text.innerHTML = currentResource.texts[index];
     }
-  });
-
-  // Update Images
-  imageElements.forEach((image) => {
-    image.loading = 'lazy';
-
-    if (isInViewport(image)) {
-      loadImage(image, currentResource);
-    } else {
-      observer.observe(image);
-    }
+    /* text.style.display = currentResource.texts.length
+      ? 'block'
+      : 'none';
+    console.log({ text });
+    if (currentResource.texts.length) {
+      text.innerHTML = currentResource.texts[index];
+    } */
   });
 }
 
