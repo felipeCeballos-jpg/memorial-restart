@@ -44,7 +44,7 @@ function createImageObserver(currentResource, deviceType) {
         deviceType
       ),
     {
-      rootMargin: '700px',
+      rootMargin: '1000px',
     }
   );
 }
@@ -63,13 +63,20 @@ function handleImagesIntersection(
 }
 
 function loadImage(image, currentResource) {
-  console.log(currentResource);
   const index = Array.from(
     document.querySelectorAll('.changeable-img')
   ).indexOf(image);
 
   image.src = currentResource.images[index];
   image.onload = () => image.classList.add('loaded');
+  /* image
+    .decode()
+    .then(() => {
+      image.classList.add('loaded');
+    })
+    .catch(() => {
+      throw new Error('Could not load/decode big image.');
+    }); */
   image.onerror = () => {
     console.log('Error loading image: ', image.src);
   };
@@ -114,19 +121,13 @@ function changeLanguage(
 ) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
-  console.log('ImageElements: ', imageElements);
-  console.log('TextElements: ', textElements);
 
   const deviceType = isMobile
     ? 'mobile'
     : isTablet
     ? 'tablet'
     : 'default';
-
-  console.log('Device type: ', deviceType);
-
   const currentResource = localizedContent[language][deviceType];
-  console.log('Current Resource: ', currentResource);
 
   // Create an new observer
   observer = createImageObserver(currentResource);
@@ -172,18 +173,26 @@ const switchLanguageButton = document.getElementById(
 );
 
 switchLanguageButton.addEventListener('click', () => {
+  const loader = document.querySelector('.loader');
+  let time;
   const currentLanguage =
     switchLanguageButton.dataset.language === 'russian'
       ? 'english'
       : 'russian';
 
-  changeLanguage(
-    currentLanguage,
-    mqlMobile.matches,
-    mqlTablet.matches
-  );
+  loader.style.display = 'flex';
 
-  switchLanguageButton.dataset.language = currentLanguage;
+  time = window.setTimeout(() => {
+    changeLanguage(
+      currentLanguage,
+      mqlMobile.matches,
+      mqlTablet.matches
+    );
+
+    switchLanguageButton.dataset.language = currentLanguage;
+
+    loader.style.display = 'none';
+  }, 1000);
 });
 
 mqlMobile.addEventListener('change', (event) => {
