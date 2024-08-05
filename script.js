@@ -44,7 +44,7 @@ function createImageObserver(currentResource, deviceType) {
         deviceType
       ),
     {
-      rootMargin: '1000px',
+      rootMargin: '3000px',
     }
   );
 }
@@ -55,6 +55,10 @@ function handleImagesIntersection(
   currentResource
 ) {
   entries.forEach((entry) => {
+    console.log({
+      isTargetVisible: entry.isIntersecting,
+      taget: entry.target,
+    });
     if (entry.isIntersecting) {
       loadImage(entry.target, currentResource);
       observer.unobserve(entry.target);
@@ -92,13 +96,6 @@ function isInViewport(element) {
     rect.right <=
       (window.innerWidth || document.documentElement.clientWidth)
   );
-}
-
-function preLoadImages(images) {
-  images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
 }
 
 const localizedContent = {

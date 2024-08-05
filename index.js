@@ -98,7 +98,7 @@ export const ruLangTab = [
   './assets/tablet/wedding.png',
   './assets/tablet/daughters_ru.png',
   'https://felipeceballos-696179685.imgix.net/assets/tablet/work_ru.png?fm=webp',
-  'https://felipeceballos-696179685.imgix.net/assets/tablet/grandson.png?fm=webp&jpeg-progressive=true',
+  'https://felipeceballos-696179685.imgix.net/assets/tablet/grandson.png?fm=webp',
   './assets/Develop ru.png',
   'https://felipeceballos-696179685.imgix.net/assets/tablet/goldenwedding_ru.png?fm=webp',
   'https://felipeceballos-696179685.imgix.net/assets/tablet/twentynineteen.png?fm=webp',
