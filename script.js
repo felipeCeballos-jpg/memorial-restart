@@ -35,6 +35,13 @@ window.addEventListener('DOMContentLoaded', () => {
 let observer;
 
 function createImageObserver(currentResource, deviceType) {
+  let newRootMargin =
+    deviceType === 'mobile'
+      ? '700px'
+      : deviceType === 'tablet'
+      ? '2000px'
+      : '4000px';
+
   return new IntersectionObserver(
     (entries, obs) =>
       handleImagesIntersection(
@@ -44,7 +51,7 @@ function createImageObserver(currentResource, deviceType) {
         deviceType
       ),
     {
-      rootMargin: '4000px',
+      rootMargin: newRootMargin,
     }
   );
 }
@@ -123,7 +130,7 @@ function changeLanguage(
   const currentResource = localizedContent[language][deviceType];
 
   // Create an new observer
-  observer = createImageObserver(currentResource);
+  observer = createImageObserver(currentResource, deviceType);
 
   /* // Preload images
   preLoadImages(currentResource.images[deviceType]); */
