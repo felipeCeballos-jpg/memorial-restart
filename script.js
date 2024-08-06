@@ -44,7 +44,7 @@ function createImageObserver(currentResource, deviceType) {
         deviceType
       ),
     {
-      rootMargin: '3000px',
+      rootMargin: '4000px',
     }
   );
 }
@@ -55,10 +55,6 @@ function handleImagesIntersection(
   currentResource
 ) {
   entries.forEach((entry) => {
-    console.log({
-      isTargetVisible: entry.isIntersecting,
-      taget: entry.target,
-    });
     if (entry.isIntersecting) {
       loadImage(entry.target, currentResource);
       observer.unobserve(entry.target);
