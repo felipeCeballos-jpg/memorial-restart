@@ -198,8 +198,7 @@ switchLanguageButton.addEventListener('click', () => {
 mqlMobile.addEventListener('change', (event) => {
   changeLanguage(
     switchLanguageButton.dataset.language,
-    event.matches,
-    false
+    event.matches
   );
 });
 
