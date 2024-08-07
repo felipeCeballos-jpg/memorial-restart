@@ -130,7 +130,7 @@ function changeLanguage(
   const currentResource = localizedContent[language][deviceType];
 
   // Create an new observer
-  observer = createImageObserver(currentResource, deviceType);
+  //observer = createImageObserver(currentResource, deviceType);
 
   /* // Preload images
   preLoadImages(currentResource.images[deviceType]); */
@@ -157,14 +157,15 @@ function changeLanguage(
   });
 
   // Update Images
-  imageElements.forEach((image) => {
-    image.loading = 'lazy';
+  imageElements.forEach((image, index) => {
+    //image.loading = 'lazy';
+    image.src = currentResource.images[index];
 
-    if (isInViewport(image)) {
+    /* if (isInViewport(image)) {
       loadImage(image, currentResource);
     } else {
       observer.observe(image);
-    }
+    } */
   });
 }
 

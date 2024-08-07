@@ -89,12 +89,12 @@ p {
 }
 
 .changeable-img {
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 0.3s;
 }
-.changeable-img.loaded {
+/* .changeable-img.loaded {
   opacity: 1;
-}
+} */
 
 .page-section img {
   flex-shrink: 0;
