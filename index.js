@@ -141,7 +141,7 @@ export const enText = [
   'Work at the Chemical Plant in Roshal and study at the Roshal Chemical-Technological College in the evening department.<br>Education has always been the main thing for her and she was in no hurry to get married until she graduated from college. ',
   'She married a fellow villager Anatoly Sergeevich Shmelev.<br> After getting married, they moved to Moscow and got a job there.',
   'Birth of daughters',
-  'Tatiana was born in 1961, Elena in 1967.<br> Elena was born with a pathology and Olga Yegorovna had to temporarily leave her job to take care of the sick child.<br> Despite all the difficult circumstances, there was not even a thought to abandon the girl.<br>In 1984, Elena died.',
+  'Tatiana was born in 1961, Elena in 1967.<br><br> Elena was born with a pathology and Olga Yegorovna had to temporarily leave her job to take care of the sick child.<br><br> In 1985, Elena died.',
   'Work in the state secret Research Institute of Chemistry and Mechanics',
   '',
   'Birth of a<br> beloved<br> grandson',
@@ -152,14 +152,14 @@ export const enText = [
 ];
 
 export const ruText = [
-  'Родилась в селе Власово, Московской области в семье простых крестьян Татьяны Васильевны и Егора Фёдоровича. <br><br> Отец погиб на войне и мать осталась с четырьмя детьми на руках, младшему из которых был всего один месяц.',
+  'Родилась в селе Власово, Московской области в семье простых крестьян Татьяны Васильевны и Егора Фёдоровича Семёновых.<br><br>Отец погиб на войне и мать осталась с четырьмя детьми на руках, младшему из которых был всего один месяц.',
   'Крещение',
   'Была крещена во Власовской церкви Покрова Пресвятой Богородицы.<br> Храм имел большое значение не только в жизни Ольги Егоровны, но и её родителей, бабушки и всех предыдущих поколений семьи.',
   'Школьные',
   'Работа на Химзаводе в Рошале и учёба в Рошальском Химико-Технологическом техникуме на вечернем отделении. <br><br> Образование всегда было главным для бабушки, и она не спешила замуж до окончания техникума. ',
   'Вышла замуж <br> за односельчанина Шмелёва Анатолия Сергеевича. <br> После женитьбы переехали в Москву и устроились на работу.',
-  'ождение<br> дочерей',
-  'Татьяна 1961-го и Елена 1967-го годов рождения. <br><br> Леночка родилась нездоровой и Ольге Егоровне пришлось временно уйти с работы, чтобы ухаживать за больным ребёнком.<br><br> Несмотря на все тяжёлые обстоятельства, не было даже мысли отказаться от девочки.<br><br> В 1984 году Леночки не стало.',
+  'Рождение<br> дочерей',
+  'Татьяна 1961-го и Елена 1967-го годов рождения. <br><br> Леночка родилась нездоровой и Ольге Егоровне пришлось временно уйти с работы, чтобы ухаживать за больным ребёнком.<br><br>  В 1985 году Леночки не стало.',
   'Работа <br> в секретном НИИХМ',
   '(Научно-исследовательский институт химии и механики) ',
   'Рождение<br> любимого<br> внука',

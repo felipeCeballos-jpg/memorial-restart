@@ -27,7 +27,7 @@ body {
 main {
   background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png?fm=webp');
   background-position: center top;
-  background-size: 100% 100%;
+  background-size: 100dvw 100%;
   background-repeat: no-repeat;
   padding: 8px 8px 0 8px;
   overflow-x: hidden;
