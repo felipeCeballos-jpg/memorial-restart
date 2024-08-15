@@ -15,25 +15,12 @@ const mqlTablet = window.matchMedia(
   '(min-width: 801px) and (max-width: 1366px)'
 );
 const mqlDesktop = window.matchMedia('(min-width: 1367px)');
-
 // Set the loader element
 const loader = document.querySelector('.loader');
-
 // Set Language
 document.getElementById('language-selector').dataset.language = 'russian';
 
-console.time('Loading time');
-window.addEventListener('load', () => {
-  console.timeEnd('Loading time');
-  loader.style.display = 'none';
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
-  scrollAction();
-});
-
-/* ChangeLanguage */
+// Localized Content
 const localizedContent = {
   russian: {
     mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
@@ -47,6 +34,18 @@ const localizedContent = {
   },
 };
 
+console.time('Loading time');
+window.addEventListener('load', () => {
+  console.timeEnd('Loading time');
+  loader.style.display = 'none';
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
+  scrollAction();
+});
+
+/* ChangeLanguage */
 function changeLanguage(language, isMobile = false, isTablet = false) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
@@ -221,15 +220,15 @@ function removeBackgroundImage(item) {
 
 function scrollAction() {
   document.querySelectorAll('.scroll-action').forEach((item) => {
-    addObserver(item, 'right');
+    scrollAnimationObserver(item, 'right');
   });
 
   document.querySelectorAll('.scroll-action-left').forEach((item) => {
-    addObserver(item, 'left');
+    scrollAnimationObserver(item, 'left');
   });
 }
 
-function addObserver(item, side) {
+function scrollAnimationObserver(item, side) {
   let observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
