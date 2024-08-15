@@ -604,7 +604,7 @@ p {
 }
 
 .lottery-ticket-image {
-  background-image: url('./assets/lotterynew.png');
+  background-image: url('https://felipeceballos-696179685.imgix.net/assets/lotterynew.png?fm=webp&h=1001&w=850');
   /*  background-image: url('https://felipeceballos-696179685.imgix.net/assets/lottery.png?fm=webp&h=1264&w=1038'); */
   width: 1038px;
   height: 1264px;
