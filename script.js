@@ -16,14 +16,16 @@ const mqlTablet = window.matchMedia(
 );
 const mqlDesktop = window.matchMedia('(min-width: 1367px)');
 
+// Set the loader element
+const loader = document.querySelector('.loader');
+
 // Set Language
-document.getElementById('language-selector').dataset.language =
-  'russian';
+document.getElementById('language-selector').dataset.language = 'russian';
 
 console.time('Loading time');
 window.addEventListener('load', () => {
   console.timeEnd('Loading time');
-  document.querySelector('.loader').style.display = 'none';
+  loader.style.display = 'none';
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -32,75 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ChangeLanguage */
-let observer;
-
-function createImageObserver(currentResource, deviceType) {
-  let newRootMargin =
-    deviceType === 'mobile'
-      ? '700px'
-      : deviceType === 'tablet'
-      ? '2000px'
-      : '4000px';
-
-  return new IntersectionObserver(
-    (entries, obs) =>
-      handleImagesIntersection(
-        entries,
-        obs,
-        currentResource,
-        deviceType
-      ),
-    {
-      rootMargin: newRootMargin,
-    }
-  );
-}
-
-function handleImagesIntersection(
-  entries,
-  observer,
-  currentResource
-) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      loadImage(entry.target, currentResource);
-      observer.unobserve(entry.target);
-    }
-  });
-}
-
-function loadImage(image, currentResource) {
-  const index = Array.from(
-    document.querySelectorAll('.changeable-img')
-  ).indexOf(image);
-
-  image.src = currentResource.images[index];
-  image.onload = () => image.classList.add('loaded');
-  /* image
-    .decode()
-    .then(() => {
-      image.classList.add('loaded');
-    })
-    .catch(() => {
-      throw new Error('Could not load/decode big image.');
-    }); */
-  image.onerror = () => {
-    console.log('Error loading image: ', image.src);
-  };
-}
-
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <=
-      (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
 const localizedContent = {
   russian: {
     mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
@@ -114,26 +47,14 @@ const localizedContent = {
   },
 };
 
-function changeLanguage(
-  language,
-  isMobile = false,
-  isTablet = false
-) {
+function changeLanguage(language, isMobile = false, isTablet = false) {
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
+  let imagesLoaded = 0;
+  const totalImages = imageElements.length;
 
-  const deviceType = isMobile
-    ? 'mobile'
-    : isTablet
-    ? 'tablet'
-    : 'default';
+  const deviceType = isMobile ? 'mobile' : isTablet ? 'tablet' : 'default';
   const currentResource = localizedContent[language][deviceType];
-
-  // Create an new observer
-  //observer = createImageObserver(currentResource, deviceType);
-
-  /* // Preload images
-  preLoadImages(currentResource.images[deviceType]); */
 
   // Update Text
   textElements.forEach((text, index) => {
@@ -158,71 +79,88 @@ function changeLanguage(
 
   // Update Images
   imageElements.forEach((image, index) => {
-    //image.loading = 'lazy';
     image.src = currentResource.images[index];
-
-    /* if (isInViewport(image)) {
-      loadImage(image, currentResource);
-    } else {
-      observer.observe(image);
-    } */
+    image.onload = () => imagesLoaded++;
+    image.onerror = () => {
+      imagesLoaded++;
+      console.log('Error loading image: ', image.src);
+    };
   });
+
+  return {
+    imagesLoaded: () => imagesLoaded === totalImages,
+  };
 }
 
-const switchLanguageButton = document.getElementById(
-  'language-selector'
-);
+const switchLanguageButton = document.getElementById('language-selector');
 
 switchLanguageButton.addEventListener('click', () => {
-  const loader = document.querySelector('.loader');
-  let time;
   const currentLanguage =
-    switchLanguageButton.dataset.language === 'russian'
-      ? 'english'
-      : 'russian';
-
+    switchLanguageButton.dataset.language === 'russian' ? 'english' : 'russian';
   loader.style.display = 'flex';
 
-  time = window.setTimeout(() => {
-    changeLanguage(
-      currentLanguage,
-      mqlMobile.matches,
-      mqlTablet.matches
-    );
+  const currentAssets = changeLanguage(
+    currentLanguage,
+    mqlMobile.matches,
+    mqlTablet.matches
+  );
 
-    switchLanguageButton.dataset.language = currentLanguage;
-
-    loader.style.display = 'none';
-  }, 1000);
+  checkImagesLoaded(currentAssets.imagesLoaded, loader);
+  console.log('Cuantas veces me activo');
+  switchLanguageButton.dataset.language = currentLanguage;
 });
 
 mqlMobile.addEventListener('change', (event) => {
-  changeLanguage(
+  if (!event.matches) return; // Prevent to call the function each time this event is active;
+  loader.style.display = 'flex'; // Active Loader
+
+  const currentAssets = changeLanguage(
     switchLanguageButton.dataset.language,
     event.matches
   );
+
+  checkImagesLoaded(currentAssets.imagesLoaded, loader);
+  console.log('Cuantas veces me activo');
 });
 
 mqlTablet.addEventListener('change', (event) => {
-  changeLanguage(
+  if (!event.matches) return; // Prevent to call the function each time this event is active;
+  loader.style.display = 'flex';
+
+  const currentAssets = changeLanguage(
     switchLanguageButton.dataset.language,
     false,
     event.matches
   );
+
+  checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
 
 mqlDesktop.addEventListener('change', (event) => {
-  changeLanguage(switchLanguageButton.dataset.language);
+  if (!event.matches) return; // Prevent to call the function each time this event is active;
+  loader.style.display = 'flex';
+
+  const currentAssets = changeLanguage(switchLanguageButton.dataset.language);
+
+  checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
+
+function checkImagesLoaded(callback, loaderElement) {
+  const checkLoadStatus = setInterval(() => {
+    if (callback()) {
+      loaderElement.style.display = 'none';
+      clearInterval(checkLoadStatus);
+    }
+  }, 100);
+}
 
 /*
   Carousel
 */
 
 const items = document.querySelectorAll('.carousel-item');
-const [carouselLeftBtn, carouselRightBtn] = document.querySelectorAll(
-  '.carousel-control'
-);
+const [carouselLeftBtn, carouselRightBtn] =
+  document.querySelectorAll('.carousel-control');
 let activeIndex = 0; // Start with the first item active
 
 // carousel functionality
