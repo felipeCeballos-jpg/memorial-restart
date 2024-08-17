@@ -17,7 +17,7 @@
   }
 
   .language-selector {
-    width: 118px;
+    width: 109px;
     padding-top: 25px;
   }
 
@@ -442,11 +442,7 @@
     height: 20px;
   }
 
-  .timeline
-    .flex-retirement
-    .retirement-carousel
-    .controls
-    .changeable-img {
+  .timeline .flex-retirement .retirement-carousel .controls .changeable-img {
     width: 133px;
     height: 40px;
   }
