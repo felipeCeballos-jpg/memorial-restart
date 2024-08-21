@@ -105,7 +105,6 @@ switchLanguageButton.addEventListener('click', () => {
   );
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
-  console.log('Cuantas veces me activo');
   switchLanguageButton.dataset.language = currentLanguage;
 });
 
@@ -119,7 +118,6 @@ mqlMobile.addEventListener('change', (event) => {
   );
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
-  console.log('Cuantas veces me activo');
 });
 
 mqlTablet.addEventListener('change', (event) => {
