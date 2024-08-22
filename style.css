@@ -646,6 +646,7 @@ p {
 @media only screen and (orientation: landscape) and (max-width: 800px) {
   .rrs-text h2 {
     bottom: 144vmin !important;
+    font-size: 5.9vw !important;
   }
 
   .rrs-text p {
