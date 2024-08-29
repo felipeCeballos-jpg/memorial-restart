@@ -1,11 +1,14 @@
 @media only screen and (min-width: 801px) and (max-width: 1366px) {
   h2 {
     font-size: 2.5rem;
-    margin: 31px 0px;
+    margin: 0px;
+    /*  margin: 31px 0px; */
   }
 
   p {
     font-size: 1.3rem;
+    margin: 16px 0px;
+    line-height: 24px;
   }
 
   .timeline {
@@ -31,6 +34,7 @@
     align-items: center;
     padding: 0 5vw 0 5vw !important;
     width: 100vw !important;
+    margin-top: -15px;
   }
 
   .birth {
@@ -44,7 +48,8 @@
     position: relative;
     width: 325px;
     margin-left: 650px;
-    margin-top: -510px;
+    /*  margin-top: -510px; */
+    margin-top: -475px;
   }
 
   /* BAPTISM */
@@ -58,7 +63,7 @@
     position: relative;
     width: 321px;
     margin-left: -500px;
-    margin-top: 120px;
+    margin-top: 178px;
     margin-bottom: -300px;
   }
 
@@ -83,8 +88,13 @@
 
   .sy-text {
     position: relative;
-    margin-left: 400px;
-    margin-top: -250px;
+    /* margin-left: 400px;
+    margin-top: -250px; */
+    /*  margin-left: 366px; */
+    width: 189px;
+    height: 90px;
+    margin-left: 408px;
+    margin-top: -219px;
   }
 
   /* UNIVERSITY */
@@ -99,13 +109,15 @@
     width: 730px;
     height: 642px;
     right: -5px;
+    top: 42px;
   }
 
   .us-text {
     position: relative;
     margin-left: -600px;
     width: 325px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
+    margin-top: 133px;
     margin-bottom: -380px;
   }
 
@@ -126,7 +138,7 @@
     position: relative;
     width: 905px;
     height: 626px;
-    top: -610px;
+    top: -569px;
   }
 
   .ws-text {
@@ -134,6 +146,7 @@
     width: 300px;
     top: -410px;
     left: -130px;
+    margin-top: -641px;
   }
 
   /* DAUGHTERS */
@@ -145,15 +158,16 @@
 
   .ds-text {
     position: relative;
-    margin-top: -220px;
-    margin-left: -450px;
+    width: 289px;
+    margin-top: -142px;
+    margin-left: -486px;
   }
 
   .daughters {
     position: relative;
     width: 488px;
     height: 348px;
-    top: -460px;
+    top: -353px;
     left: 200px;
   }
 
@@ -176,14 +190,18 @@
     position: relative;
     width: 950px;
     height: 744px;
-    top: -1000px;
+    top: -1026px;
   }
 
   .rs-text {
     position: relative;
-    margin-top: -1270px;
+    margin-top: -1242px;
     margin-left: 550px;
     width: 300px;
+  }
+
+  .rs-text h2 {
+    font-size: 2rem;
   }
 
   /* GRANDSON */
@@ -203,9 +221,9 @@
 
   .gs-text {
     position: relative;
-    top: -10px;
+    top: 2px;
     left: -450px;
-    margin-bottom: 250px;
+    margin-bottom: 273px;
   }
 
   /* RETIREMENT */
@@ -222,20 +240,41 @@
   }
 
   .carousel-items {
-    width: 574px;
-    height: 525px;
-    margin: 47px 53px 0px 53px;
+    width: 375px;
+    height: 338px;
+    margin: 30px 35px 0px 35px;
   }
 
   .retirement-carousel .controls {
-    margin: 10px 54px 28px 55px;
+    margin: 9px 38px 16px 39px;
+  }
+
+  .controls .carousel-control {
+    width: 105px;
+    height: 70px;
+    margin: 0px;
+  }
+
+  .controls .carousel-control #arrowLeftButton {
+    width: 59px;
+    height: 22px;
+  }
+
+  .controls .carousel-control .arrowRightButton {
+    width: 48px;
+    height: 20px;
+  }
+
+  .timeline .flex-retirement .retirement-carousel .controls .changeable-img {
+    width: 133px;
+    height: 40px;
   }
 
   .timeline .retirement {
     position: relative;
     content: url('./assets/lifeline@2x.png');
     width: 772px;
-    margin-top: -123px !important;
+    margin-top: -92px !important;
     margin-left: 55px !important;
   }
 
@@ -267,6 +306,7 @@
     top: -870px;
     left: -480px;
     margin-top: 880px;
+    margin-bottom: 32px;
   }
 
   .lottery-ticket {
@@ -292,7 +332,7 @@
 
   .tns-text {
     position: relative;
-    top: 150px;
+    top: 197px;
     left: -200px;
     width: 300px;
   }
@@ -322,6 +362,10 @@
     height: 662px;
   }
 
+  .section-birth {
+    margin-top: 0px;
+  }
+
   .birth {
     width: 647px;
     height: 394px;
@@ -330,6 +374,7 @@
   .bs-text {
     top: 90px;
     left: -70px;
+    margin-top: -510px;
   }
 
   .baptism {
@@ -341,6 +386,7 @@
   .bbs-text {
     left: 60px;
     width: 280px;
+    margin-top: 224px;
   }
 
   .school {
@@ -350,22 +396,24 @@
 
   .sy-text {
     top: 40px;
+    margin-left: 379px;
+    margin-top: -235px;
   }
 
   .university {
     width: 639px;
     height: 562px;
-    top: 20px;
+    top: 67px;
   }
 
   .us-text {
-    top: -10px;
     left: 49px;
     width: 300px;
+    margin-top: 149px;
   }
 
   .wedding {
-    top: -590px;
+    top: -513px;
     width: 792px;
     height: 548px;
     left: 40px;
@@ -380,24 +428,24 @@
   .daughters {
     width: 427px;
     height: 305px;
-    top: -400px;
+    top: -260px;
   }
 
   .ds-text {
     top: 50px;
-    width: 322px;
   }
 
   .work {
     width: 831px;
     height: 651px;
-    top: -920px;
+    top: -944px;
   }
 
   .rs-text {
-    top: 100px;
+    top: 132px;
     left: -20px;
     width: 250px;
+    margin-top: -1277px;
   }
 
   .grandson {
@@ -408,7 +456,7 @@
   }
 
   .gs-text {
-    top: 40px;
+    top: 55px;
     left: -340px;
   }
 
@@ -481,5 +529,9 @@
 
   .passport {
     display: none;
+  }
+
+  .menu {
+    margin-top: 560px;
   }
 }
