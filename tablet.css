@@ -223,7 +223,8 @@
     position: relative;
     top: 2px;
     left: -450px;
-    margin-bottom: 273px;
+    /* margin-bottom: 273px; */
+    margin-bottom: 220px;
   }
 
   /* RETIREMENT */
@@ -240,48 +241,41 @@
   }
 
   .carousel-items {
-    width: 375px;
-    height: 338px;
-    margin: 30px 35px 0px 35px;
+    width: 505px;
+    height: 456px;
+    margin: 43px 51px 0px 50px;
   }
 
   .retirement-carousel .controls {
-    margin: 9px 38px 16px 39px;
+    margin: 10px 54px 28px 55px;
   }
 
   .controls .carousel-control {
-    width: 105px;
-    height: 70px;
-    margin: 0px;
-  }
-
-  .controls .carousel-control #arrowLeftButton {
-    width: 59px;
-    height: 22px;
-  }
-
-  .controls .carousel-control .arrowRightButton {
-    width: 48px;
-    height: 20px;
+    width: 100px;
+    height: 96px;
   }
 
   .timeline .flex-retirement .retirement-carousel .controls .changeable-img {
-    width: 133px;
-    height: 40px;
+    width: 195px;
+    height: 45px;
   }
 
   .timeline .retirement {
     position: relative;
     content: url('./assets/lifeline@2x.png');
     width: 772px;
-    margin-top: -92px !important;
+
+    margin-top: -160px !important;
     margin-left: 55px !important;
   }
 
   .rrs-text {
     /*  position: relative; */
-    width: 300px;
-    margin-top: 50px;
+    /* width: 300px; */
+    width: 288px;
+
+    /*  margin-top: 50px; */
+    margin-top: 112px;
     /*  top: 190px;
       left: -110px; */
   }
@@ -459,6 +453,7 @@
   .gs-text {
     top: 55px;
     left: -340px;
+    margin-bottom: 273px;
   }
 
   /* RETIREMENT */
@@ -499,10 +494,12 @@
   .timeline .retirement {
     max-width: 763px;
     width: 100%;
+    margin-top: -92px !important;
   }
 
   .rrs-text {
     width: 270px;
+    margin-top: 50px;
   }
 
   .goldenwedding {
