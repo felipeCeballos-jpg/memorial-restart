@@ -372,8 +372,9 @@
   }
 
   .bs-text {
+    width: 287px;
     top: 90px;
-    left: -70px;
+    left: -86px;
     margin-top: -510px;
   }
 
@@ -386,7 +387,7 @@
   .bbs-text {
     left: 60px;
     width: 280px;
-    margin-top: 224px;
+    margin-top: 201px;
   }
 
   .school {
