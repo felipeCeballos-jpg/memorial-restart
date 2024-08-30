@@ -770,13 +770,16 @@ p {
   .rrs-text {
     width: 100% !important;
     margin-top: 0px;
+    position: inherit;
   }
 
   .rrs-text h2 {
     width: 100%;
     position: absolute;
     /* top: -110vmin; */
-    bottom: 165vmin;
+    /* bottom: 165vmin; */
+    /* bottom: calc(68.092vmin + 200px); */
+    top: 9vmin;
     font-size: 9vw;
     text-align: center;
   }
