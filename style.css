@@ -661,6 +661,10 @@ p {
   .rrs-text p {
     font-size: 2.9vw !important;
   }
+
+  .page-section .section-daughters {
+    margin-top: -13rem;
+  }
 }
 
 @media only screen and (max-width: 800px) {
