@@ -646,6 +646,10 @@ p {
   .rrs-text h2 {
     bottom: 173vmin !important;
   }
+
+  .page-section .section-daughters {
+    margin-top: -57vmin;
+  }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 800px) {
@@ -738,12 +742,12 @@ p {
 
   .section-daughters {
     margin-top: -18rem;
-    margin-bottom: -2rem;
+    margin-bottom: -3vmin;
   }
 
   .section-grandson {
-    margin-top: -7rem;
-    margin-bottom: -9rem;
+    margin-top: -16vmin;
+    margin-bottom: -20vmin;
   }
 
   /* RETIREMENT */
@@ -751,7 +755,7 @@ p {
     position: relative;
     width: 100vmin;
     margin-bottom: 2rem;
-    margin-top: 21vmin;
+    margin-top: 13vmin;
     padding: 0px;
   }
 
