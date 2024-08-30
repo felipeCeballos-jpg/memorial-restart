@@ -215,13 +215,13 @@
     position: relative;
     width: 938px;
     height: 944px;
-    top: -250px;
+    top: -296px;
     left: -70px;
   }
 
   .gs-text {
     position: relative;
-    top: 2px;
+    top: -43px;
     left: -450px;
     /* margin-bottom: 273px; */
     margin-bottom: 220px;
@@ -265,7 +265,7 @@
     content: url('./assets/lifeline@2x.png');
     width: 772px;
 
-    margin-top: -160px !important;
+    margin-top: -178px !important;
     margin-left: 55px !important;
   }
 
@@ -275,7 +275,7 @@
     width: 288px;
 
     /*  margin-top: 50px; */
-    margin-top: 112px;
+    margin-top: 69px;
     /*  top: 190px;
       left: -110px; */
   }
