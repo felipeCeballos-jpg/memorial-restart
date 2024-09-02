@@ -46,7 +46,7 @@
 
   .bs-text {
     position: relative;
-    width: 325px;
+    width: 286px;
     margin-left: 650px;
     /*  margin-top: -510px; */
     margin-top: -475px;
@@ -61,9 +61,10 @@
 
   .bbs-text {
     position: relative;
-    width: 321px;
+    width: 280px;
     margin-left: -500px;
-    margin-top: 178px;
+    /* margin-top: 178px; */
+    margin-top: 145px;
     margin-bottom: -300px;
   }
 
@@ -366,8 +367,8 @@
   }
 
   .bs-text {
-    width: 287px;
-    top: 90px;
+    width: 264px;
+    top: 78px;
     left: -86px;
     margin-top: -510px;
   }
@@ -380,8 +381,8 @@
 
   .bbs-text {
     left: 60px;
-    width: 280px;
-    margin-top: 201px;
+    width: 262px;
+    margin-top: 175px;
   }
 
   .school {

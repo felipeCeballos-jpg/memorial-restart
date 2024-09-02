@@ -745,7 +745,7 @@ p {
   }
 
   .section-daughters {
-    margin-top: -18rem;
+    margin-top: -55vmin;
     margin-bottom: -3vmin;
   }
 
@@ -801,7 +801,7 @@ p {
     text-align: left;
     font-size: 5.9vw;
     padding-left: 3vmin;
-    margin: 0px;
+    margin: 26px 0px 0px 0px;
   }
   .timeline .retirement {
     position: relative;
