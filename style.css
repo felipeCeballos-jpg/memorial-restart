@@ -68,7 +68,7 @@ body .loader img {
 h2 {
   font-size: 2.7em;
   font-weight: 100;
-  margin: 36px 0px;
+  /* margin: 36px 0px; */
 }
 
 p {
@@ -148,7 +148,8 @@ p {
 .bs-text {
   position: relative;
   width: 350px;
-  margin-top: -670px;
+  /* margin-top: -670px; */
+  margin-top: -644px;
   margin-left: 850px;
 }
 
@@ -159,16 +160,16 @@ p {
 }
 
 .baptism {
-  margin-top: -450px;
+  margin-top: -385px;
   width: 1330px;
   height: 558px;
 }
 
 .bbs-text {
   position: relative;
-  width: 320px;
-  margin-top: 170px;
-  margin-left: 200px;
+  width: 341px;
+  margin-top: 225px;
+  margin-left: 206px;
 }
 
 /* SCHOOL */
@@ -201,16 +202,16 @@ p {
 .university {
   width: 1186px;
   height: 912px;
-  margin-top: -480px;
+  margin-top: -445px;
   margin-left: -30px;
   z-index: 1;
 }
 
 .us-text {
   position: relative;
-  margin-top: 140px;
+  margin-top: 249px;
   margin-left: 100px;
-  width: 350px;
+  width: 348px;
 }
 
 /* WEDDING */
@@ -228,9 +229,9 @@ p {
 
 .ws-text {
   position: relative;
-  margin-top: -710px;
+  margin-top: -672px;
   margin-left: 810px;
-  width: 300px;
+  width: 319px;
 }
 
 /* DAUGHTERS */
@@ -241,15 +242,15 @@ p {
 
 .ds-text {
   position: relative;
-  margin-top: 335px;
+  margin-top: 421px;
   margin-left: 120px;
-  width: 350px;
+  width: 363px;
 }
 
 .daughters {
   width: 674px;
   height: 484px;
-  margin-top: -501px;
+  margin-top: -397px;
   margin-left: 500px;
 }
 
@@ -266,9 +267,9 @@ p {
 
 .rs-text {
   position: relative;
-  margin-top: -500px;
+  margin-top: -483px;
   margin-left: 960px;
-  width: 350px;
+  width: 354px;
 }
 
 /* GRANDSON */
@@ -423,7 +424,7 @@ p {
 
 .rrs-text {
   position: relative;
-  margin-top: 120px;
+  margin-top: 169px;
   /*  margin-left: 800px; */
   width: 300px;
 }
@@ -461,7 +462,7 @@ p {
 
 .tns-text {
   position: relative;
-  margin-top: -560px;
+  margin-top: -546px;
   margin-left: 980px;
   width: 300px;
 }
@@ -787,7 +788,7 @@ p {
     /* top: -110vmin; */
     /* bottom: 165vmin; */
     /* bottom: calc(68.092vmin + 200px); */
-    top: 9vmin;
+    top: 12vmin;
     font-size: 9vw;
     text-align: center;
   }
