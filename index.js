@@ -115,7 +115,7 @@ export const enLangTab = [
   'https://felipeceballos-696179685.imgix.net/assets/tablet/hero_en.png?fm=webp',
   './assets/tablet/birth.png',
   './assets/tablet/baptism.png',
-  './assets/tablet/school_en.png',
+  'https://felipeceballos-696179685.imgix.net/assets/tablet/school_en.png?fm=webp',
   './assets/tablet/university.png',
   './assets/tablet/wedding.png',
   './assets/tablet/daughters_en.png',
