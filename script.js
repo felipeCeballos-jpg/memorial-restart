@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
-  scrollAction();
+  sideElementsAnimation();
 });
 
 /* ChangeLanguage */
@@ -104,7 +104,9 @@ switchLanguageButton.addEventListener('click', () => {
     mqlTablet.matches
   );
 
-  checkImagesLoaded(currentAssets.imagesLoaded, loader);
+  sideElementsAnimation();
+
+  checkImagesLoaded(currentAssets.imagesLoaded, loader, true);
   switchLanguageButton.dataset.language = currentLanguage;
 });
 
@@ -123,6 +125,7 @@ mqlMobile.addEventListener('change', (event) => {
 mqlTablet.addEventListener('change', (event) => {
   if (!event.matches) return; // Prevent to call the function each time this event is active;
   loader.style.display = 'flex';
+  sideElementsAnimation();
 
   const currentAssets = changeLanguage(
     switchLanguageButton.dataset.language,
@@ -136,19 +139,34 @@ mqlTablet.addEventListener('change', (event) => {
 mqlDesktop.addEventListener('change', (event) => {
   if (!event.matches) return; // Prevent to call the function each time this event is active;
   loader.style.display = 'flex';
+  sideElementsAnimation();
 
   const currentAssets = changeLanguage(switchLanguageButton.dataset.language);
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
 
-function checkImagesLoaded(callback, loaderElement) {
+function checkImagesLoaded(callback, loaderElement, delayLoadingPage = false) {
+  const maxLoadingTime = 3000; // 3 seconds
+  const checkInterval = 100; // Interval time in ms
+  const startTime = Date.now();
+
   const checkLoadStatus = setInterval(() => {
     if (callback()) {
-      loaderElement.style.display = 'none';
+      const elapsedTime = Date.now() - startTime;
+      const timeRemaining = maxLoadingTime - elapsedTime;
+
+      if (delayLoadingPage && elapsedTime < maxLoadingTime) {
+        setTimeout(() => {
+          loaderElement.style.display = 'none';
+        }, timeRemaining);
+      } else {
+        loaderElement.style.display = 'none';
+      }
+
       clearInterval(checkLoadStatus);
     }
-  }, 100);
+  }, checkInterval);
 }
 
 /*
@@ -216,18 +234,23 @@ function removeBackgroundImage(item) {
   Animation
 */
 
-function scrollAction() {
-  document.querySelectorAll('.scroll-action').forEach((item) => {
-    scrollAnimationObserver(item, 'right');
-  });
+function sideElementsAnimation() {
+  resetSEAnimation();
 
-  document.querySelectorAll('.scroll-action-left').forEach((item) => {
-    scrollAnimationObserver(item, 'left');
+  const elementsToAnimate = [
+    { selector: '.scroll-action', side: 'right' },
+    { selector: '.scroll-action-left', side: 'left' },
+  ];
+
+  elementsToAnimate.forEach(({ selector, side }) => {
+    document.querySelectorAll(selector).forEach((item) => {
+      initScrollAnimationObserver(item, side);
+    });
   });
 }
 
-function scrollAnimationObserver(item, side) {
-  let observer = new IntersectionObserver(
+function initScrollAnimationObserver(item, side) {
+  const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -238,8 +261,24 @@ function scrollAnimationObserver(item, side) {
     },
     {
       rootMargin: '0px',
+      threshold: 0, // trigger when 0% of the element is visible
     }
   );
 
   observer.observe(item);
+}
+
+function resetSEAnimation() {
+  const elementsToReset = [
+    { selector: '.scroll-action', animationClass: 'scroll-active-right' },
+    { selector: '.scroll-action-left', animationClass: 'scroll-active-left' },
+  ];
+
+  elementsToReset.forEach(({ selector, animationClass }) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.classList.contains(animationClass)) {
+        element.classList.remove(animationClass);
+      }
+    });
+  });
 }
