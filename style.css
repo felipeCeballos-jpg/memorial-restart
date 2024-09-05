@@ -535,7 +535,6 @@ p {
   cursor: pointer;
   width: 12vw;
   transform: translateY(-1rem);
-  will-change: scroll-position;
 }
 
 /* 
