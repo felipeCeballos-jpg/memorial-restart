@@ -528,12 +528,14 @@ p {
   width: 12vw;
   height: auto;
   transition: transform 0.3s ease-in-out;
+  transform: translateY(0rem);
 }
 
 .pages img:hover {
   cursor: pointer;
   width: 12vw;
   transform: translateY(-1rem);
+  will-change: scroll-position;
 }
 
 /* 
