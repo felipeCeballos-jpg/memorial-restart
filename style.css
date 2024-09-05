@@ -540,7 +540,7 @@ p {
 
 /* 
   EXTRAS
-
+ 
   these extra images are created with background instead of the image element because
   we are not displaying these images on mobile and we don't want to also trigger 
   a request to those images when they are hidden on mobile. 
