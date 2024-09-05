@@ -529,15 +529,15 @@ p {
   height: auto;
 
   transition: transform 0.3s ease-in-out;
-  /* transform: translateY(0rem); */
+  transform: translateY(0rem);
 }
 
 .pages img:hover {
   cursor: pointer;
   width: 12vw;
-  /*  transform: translateY(-1rem); */
-  transform: translate(0, -5%);
-  transition: 0.3s;
+  transform: translateY(-1rem);
+  /* transform: translate(0, -5%);
+  transition: 0.3s; */
 }
 
 /* 
