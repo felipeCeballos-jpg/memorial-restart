@@ -659,7 +659,7 @@ p {
 }
 
 @media only screen and (orientation: landscape) and (max-width: 800px) {
-  .rrs-text h2 {
+  /* .rrs-text h2 {
     bottom: 144vmin !important;
     font-size: 5vw !important;
   }
@@ -670,6 +670,62 @@ p {
 
   .page-section .section-daughters {
     margin-top: -13rem;
+  } */
+
+  .flex-retirement .retirement-carousel .carousel-items {
+    width: 84vmax !important;
+    height: 68.092vmax !important;
+    margin: 6.243vmax 7.8vmax 0px 8vmax !important;
+  }
+
+  .flex-retirement .retirement-carousel .controls {
+    margin: 2.156vmax 7.9vmax 4.7vmax 7.9vmax !important;
+  }
+
+  .flex-retirement .retirement-carousel .controls .carousel-control {
+    width: 16vmax;
+    height: 13.41vmax;
+  }
+
+  .retirement-carousel .controls .carousel-control .arrowRightButton {
+    width: 9.133vmax !important;
+    height: 3.699vmax !important;
+  }
+
+  .retirement-carousel .controls .carousel-control #arrowLeftButton {
+    width: 11.445vmax !important;
+    height: 4.162vmax !important;
+  }
+
+  .page-section
+    .timeline
+    .flex-retirement
+    .retirement-carousel
+    .controls
+    .changeable-img {
+    width: 24.855vmax !important;
+    height: 7.514vmax !important;
+  }
+  .controls .carousel-control img {
+    width: 11.5vmax !important;
+  }
+
+  .rrs-text p {
+    padding-left: 11vmin !important;
+    padding-right: 10vmin !important;
+  }
+
+  .section-navbook .menu,
+  .section-navbook .navbook {
+    width: 100% !important;
+  }
+
+  .menu .pages img {
+    width: 14vmax !important;
+  }
+
+  .menu .pages {
+    bottom: 9px;
   }
 }
 
@@ -677,6 +733,11 @@ p {
   body {
     padding: 0px;
   }
+
+  main {
+    padding: 8px 0px 0px 0px;
+  }
+
   .non-mob {
     display: none;
   }
@@ -699,15 +760,14 @@ p {
     padding-bottom: 50px;
   }
 
-  .timeline {
+  /* .timeline {
     padding: 0px 8px;
-  }
+  } */
 
   .timeline img {
-    width: 100vmin !important;
+    width: 100% !important;
     height: auto !important;
     margin: 0 !important;
-    margin-left: -3vmin !important;
   }
 
   .menu {
@@ -763,7 +823,7 @@ p {
   /* RETIREMENT */
   .section-retirement {
     position: relative;
-    width: 100vmin;
+    width: 100%;
     margin-bottom: 2rem;
     margin-top: 13vmin;
     padding: 0px;
@@ -805,8 +865,9 @@ p {
     /*  max-width: 610px; */
     width: 100%;
     text-align: left;
-    font-size: 5.9vw;
-    padding-left: 3vmin;
+    font-size: 5.1vw;
+    padding-left: 7vmin;
+    padding-right: 7vmin;
     margin: 30px 0px 0px 0px;
   }
   .timeline .retirement {
