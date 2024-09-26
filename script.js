@@ -43,6 +43,7 @@ window.addEventListener('load', () => {
 window.addEventListener('DOMContentLoaded', () => {
   changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
   sideElementsAnimation();
+  booksAnimation();
 });
 
 /* ChangeLanguage */
@@ -114,6 +115,7 @@ mqlMobile.addEventListener('change', (event) => {
   if (!event.matches) return; // Prevent to call the function each time this event is active;
   loader.style.display = 'flex'; // Active Loader
 
+  booksAnimation();
   const currentAssets = changeLanguage(
     switchLanguageButton.dataset.language,
     event.matches
@@ -126,6 +128,7 @@ mqlTablet.addEventListener('change', (event) => {
   if (!event.matches) return; // Prevent to call the function each time this event is active;
   loader.style.display = 'flex';
   sideElementsAnimation();
+  booksAnimation();
 
   const currentAssets = changeLanguage(
     switchLanguageButton.dataset.language,
@@ -140,6 +143,7 @@ mqlDesktop.addEventListener('change', (event) => {
   if (!event.matches) return; // Prevent to call the function each time this event is active;
   loader.style.display = 'flex';
   sideElementsAnimation();
+  booksAnimation();
 
   const currentAssets = changeLanguage(switchLanguageButton.dataset.language);
 
@@ -281,4 +285,34 @@ function resetSEAnimation() {
       }
     });
   });
+}
+
+function booksAnimation() {
+  resetBooksAnimation();
+
+  const footer = document.querySelector('.section-navbook');
+  const books = document.querySelector('.menu');
+  const booksObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          books.classList.add('menu-active');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      rootMargin: '0px',
+      threshold: 0.6,
+    }
+  );
+
+  booksObserver.observe(footer);
+}
+
+function resetBooksAnimation() {
+  const page = document.querySelector('.menu');
+  if (page.classList.contains('menu-active')) {
+    page.classList.remove('menu-active');
+  }
 }

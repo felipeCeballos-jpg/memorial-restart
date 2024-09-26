@@ -477,6 +477,7 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 620px;
+  transform: translateY(20rem);
   /* z-index: 0; */
 }
 
@@ -627,6 +628,19 @@ p {
 
 .scroll-active-right {
   animation: 1s linear 0s forwards slideRight;
+}
+
+.menu-active {
+  animation: 1.6s ease-out 1s forwards activeMenu;
+}
+
+@keyframes activeMenu {
+  from {
+    transform: translateY(20rem);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideRight {
