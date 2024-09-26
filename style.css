@@ -631,7 +631,7 @@ p {
 }
 
 .menu-active {
-  animation: 1.6s ease-out 1s forwards activeMenu;
+  animation: 1.6s ease-out 0.8ms forwards activeMenu;
 }
 
 @keyframes activeMenu {
