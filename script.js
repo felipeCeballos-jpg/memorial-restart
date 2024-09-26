@@ -106,6 +106,7 @@ switchLanguageButton.addEventListener('click', () => {
   );
 
   sideElementsAnimation();
+  booksAnimation();
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader, true);
   switchLanguageButton.dataset.language = currentLanguage;
