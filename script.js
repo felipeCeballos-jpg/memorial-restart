@@ -209,30 +209,62 @@ carouselRightBtn.addEventListener('click', () => {
 */
 
 // Carousel Left Button
-carouselLeftBtn.addEventListener('pointerdown', () => {
-  addBackgroundImage(carouselLeftBtn);
+carouselLeftBtn.addEventListener('pointerdown', (e) => {
+  initBackgroundFn('add', e.target);
 });
-carouselLeftBtn.addEventListener('pointerup', () => {
-  setTimeout(() => {
-    removeBackgroundImage(carouselLeftBtn);
-  }, 100);
+carouselLeftBtn.addEventListener('pointerup', (e) => {
+  initBackgroundFn('remove', e.target);
 });
 /* carouselLeftBtn.addEventListener('pointercancel', () => {
   removeBackgroundImage(carouselLeftBtn);
 }); */
+carouselLeftBtn.addEventListener('focus', (e) => {
+  e.target.addEventListener('keydown', (key) => {
+    if (key.code === 'Enter' || key.code === 'Space') {
+      initBackgroundFn('add', e.target);
+    }
+  });
+
+  e.target.addEventListener('keyup', (key) => {
+    if (key.code === 'Enter' || key.code === 'Space') {
+      initBackgroundFn('remove', e.target);
+    }
+  });
+});
 
 // Carousel Right Button
-carouselRightBtn.addEventListener('pointerdown', () => {
-  addBackgroundImage(carouselRightBtn);
+carouselRightBtn.addEventListener('pointerdown', (e) => {
+  initBackgroundFn('add', e.target);
 });
-carouselRightBtn.addEventListener('pointerup', () => {
-  setTimeout(() => {
-    removeBackgroundImage(carouselRightBtn);
-  }, 100);
+carouselRightBtn.addEventListener('pointerup', (e) => {
+  initBackgroundFn('remove', e.target);
 });
 /* carouselRightBtn.addEventListener('pointercancel', () => {
   removeBackgroundImage(carouselRightBtn);
 }); */
+carouselRightBtn.addEventListener('focus', (e) => {
+  e.target.addEventListener('keydown', (key) => {
+    if (key.code === 'Enter' || key.code === 'Space') {
+      initBackgroundFn('add', e.target);
+    }
+  });
+
+  e.target.addEventListener('keyup', (key) => {
+    if (key.code === 'Enter' || key.code === 'Space') {
+      initBackgroundFn('remove', e.target);
+    }
+  });
+});
+
+function initBackgroundFn(action, element) {
+  if (action === 'add') {
+    addBackgroundImage(element);
+  } else if (action === 'remove') {
+    setTimeout(() => {
+      removeBackgroundImage(element);
+    }, 100);
+  }
+}
 
 function addBackgroundImage(item) {
   item.style.backgroundImage = `url("./assets/arrow choose@2x.webp")`;
