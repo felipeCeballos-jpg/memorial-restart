@@ -44,6 +44,10 @@ window.addEventListener('DOMContentLoaded', () => {
   changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
   sideElementsAnimation();
   booksAnimation();
+
+  // Preload the dashes images
+  const img = new Image();
+  img.src = './assets/arrow choose@2x.webp';
 });
 
 /* ChangeLanguage */
@@ -213,6 +217,9 @@ carouselLeftBtn.addEventListener('pointerup', () => {
     removeBackgroundImage(carouselLeftBtn);
   }, 100);
 });
+/* carouselLeftBtn.addEventListener('pointercancel', () => {
+  removeBackgroundImage(carouselLeftBtn);
+}); */
 
 // Carousel Right Button
 carouselRightBtn.addEventListener('pointerdown', () => {
@@ -223,6 +230,9 @@ carouselRightBtn.addEventListener('pointerup', () => {
     removeBackgroundImage(carouselRightBtn);
   }, 100);
 });
+/* carouselRightBtn.addEventListener('pointercancel', () => {
+  removeBackgroundImage(carouselRightBtn);
+}); */
 
 function addBackgroundImage(item) {
   item.style.backgroundImage = `url("./assets/arrow choose@2x.webp")`;
