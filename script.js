@@ -282,7 +282,10 @@ function removeBackgroundImage(item) {
 */
 
 function sideElementsAnimation() {
-  resetSEAnimation();
+  resetAnimation([
+    { selector: '.scroll-action', animationClass: 'scroll-active-right' },
+    { selector: '.scroll-action-left', animationClass: 'scroll-active-left' },
+  ]);
 
   const elementsToAnimate = [
     { selector: '.scroll-action', side: 'right' },
@@ -315,7 +318,28 @@ function initScrollAnimationObserver(item, side) {
   observer.observe(item);
 }
 
-function resetSEAnimation() {
+function resetAnimation(elements) {
+  if (elements.length === 0) return;
+
+  elements.forEach(({ selector, animationClass }) => {
+    if (elements === 1) {
+      const element = document.querySelector(selector);
+      if (element.classList.contains('menu-active')) {
+        element.classList.remove('menu-active');
+      }
+
+      return;
+    }
+
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.classList.contains(animationClass)) {
+        element.classList.remove(animationClass);
+      }
+    });
+  });
+}
+
+/*function resetSEAnimation() {
   const elementsToReset = [
     { selector: '.scroll-action', animationClass: 'scroll-active-right' },
     { selector: '.scroll-action-left', animationClass: 'scroll-active-left' },
@@ -328,10 +352,10 @@ function resetSEAnimation() {
       }
     });
   });
-}
+}*/
 
 function booksAnimation() {
-  resetBooksAnimation();
+  resetAnimation([{ selector: '.menu', animationClass: 'menu-active' }]);
 
   const footer = document.querySelector('.section-navbook');
   const books = document.querySelector('.menu');
@@ -353,9 +377,9 @@ function booksAnimation() {
   booksObserver.observe(footer);
 }
 
-function resetBooksAnimation() {
+/* function resetBooksAnimation() {
   const page = document.querySelector('.menu');
   if (page.classList.contains('menu-active')) {
     page.classList.remove('menu-active');
   }
-}
+} */
