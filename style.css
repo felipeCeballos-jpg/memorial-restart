@@ -25,7 +25,7 @@ body {
 }
 
 main {
-  background-image: url('https://felipeceballos-696179685.imgix.net/assets/bg.png?fm=webp');
+  background-image: url('./assets/bg.webp');
   background-position: center top;
   background-size: 100dvh 100%;
   background-size: 100% 100%;
@@ -616,8 +616,7 @@ p {
 }
 
 .lottery-ticket-image {
-  background-image: url('https://felipeceballos-696179685.imgix.net/assets/lotterynew.png?fm=webp&h=1001&w=850');
-  /*  background-image: url('https://felipeceballos-696179685.imgix.net/assets/lottery.png?fm=webp&h=1264&w=1038'); */
+  background-image: url('./assets/lottery.webp');
   width: 1038px;
   height: 1264px;
 }
