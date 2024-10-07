@@ -672,19 +672,6 @@ p {
 }
 
 @media only screen and (orientation: landscape) and (max-width: 800px) {
-  /* .rrs-text h2 {
-    bottom: 144vmin !important;
-    font-size: 5vw !important;
-  }
-
-  .rrs-text p {
-    font-size: 2.9vw !important;
-  }
-
-  .page-section .section-daughters {
-    margin-top: -13rem;
-  } */
-
   .flex-retirement .retirement-carousel .carousel-items {
     width: 84vmax !important;
     height: 68.092vmax !important;
