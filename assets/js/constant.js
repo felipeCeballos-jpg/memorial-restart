@@ -188,3 +188,5 @@ export const carouselImages = [
   './assets/carousel/carousel-16.webp',
   './assets/carousel/carousel-17.webp',
 ];
+
+export const INITIAL_LANGUAGE = 'ru';

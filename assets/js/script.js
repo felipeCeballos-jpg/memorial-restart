@@ -7,7 +7,10 @@ import {
   ruLangTab,
   enLangTab,
   enLangMob,
-} from './index.js';
+} from './constant.js';
+import { initLanguage, getLanguage, setLanguage } from './util.js';
+
+const html = document.querySelector('html');
 
 // Set media queries
 const mqlMobile = window.matchMedia('(max-width: 800px)');
@@ -15,19 +18,21 @@ const mqlTablet = window.matchMedia(
   '(min-width: 801px) and (max-width: 1366px)'
 );
 const mqlDesktop = window.matchMedia('(min-width: 1367px)');
+
 // Set the loader element
 const loader = document.querySelector('.loader');
+
 // Set Language
-document.getElementById('language-selector').dataset.language = 'russian';
+initLanguage(html);
 
 // Localized Content
 const localizedContent = {
-  russian: {
+  ru: {
     mobile: { images: ruLangMob, texts: [ruText[11], ruText[12]] },
     tablet: { images: ruLangTab, texts: ruText },
     default: { images: ruLang, texts: ruText },
   },
-  english: {
+  en: {
     mobile: { images: enLangMob, texts: [enText[11], enText[12]] },
     tablet: { images: enLangTab, texts: enText },
     default: { images: enLang, texts: enText },
@@ -41,7 +46,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  changeLanguage('russian', mqlMobile.matches, mqlTablet.matches);
+  updateDesign(mqlMobile.matches, mqlTablet.matches);
   sideElementsAnimation();
   booksAnimation();
 
@@ -50,8 +55,9 @@ window.addEventListener('DOMContentLoaded', () => {
   img.src = './assets/arrow choose@2x.webp';
 });
 
-/* ChangeLanguage */
-function changeLanguage(language, isMobile = false, isTablet = false) {
+/* UpdateDesign */
+function updateDesign(isMobile = false, isTablet = false) {
+  const language = getLanguage();
   const imageElements = document.querySelectorAll('.changeable-img');
   const textElements = document.querySelectorAll('.changeable-txt');
   let imagesLoaded = 0;
@@ -99,21 +105,15 @@ function changeLanguage(language, isMobile = false, isTablet = false) {
 const switchLanguageButton = document.getElementById('language-selector');
 
 switchLanguageButton.addEventListener('click', () => {
-  const currentLanguage =
-    switchLanguageButton.dataset.language === 'russian' ? 'english' : 'russian';
   loader.style.display = 'flex';
+  setLanguage(html);
 
-  const currentAssets = changeLanguage(
-    currentLanguage,
-    mqlMobile.matches,
-    mqlTablet.matches
-  );
+  const currentAssets = updateDesign(mqlMobile.matches, mqlTablet.matches);
 
   sideElementsAnimation();
   booksAnimation();
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader, true);
-  switchLanguageButton.dataset.language = currentLanguage;
 });
 
 mqlMobile.addEventListener('change', (event) => {
@@ -121,10 +121,7 @@ mqlMobile.addEventListener('change', (event) => {
   loader.style.display = 'flex'; // Active Loader
 
   booksAnimation();
-  const currentAssets = changeLanguage(
-    switchLanguageButton.dataset.language,
-    event.matches
-  );
+  const currentAssets = updateDesign(event.matches);
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
@@ -135,11 +132,7 @@ mqlTablet.addEventListener('change', (event) => {
   sideElementsAnimation();
   booksAnimation();
 
-  const currentAssets = changeLanguage(
-    switchLanguageButton.dataset.language,
-    false,
-    event.matches
-  );
+  const currentAssets = updateDesign(false, event.matches);
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
@@ -150,7 +143,7 @@ mqlDesktop.addEventListener('change', (event) => {
   sideElementsAnimation();
   booksAnimation();
 
-  const currentAssets = changeLanguage(switchLanguageButton.dataset.language);
+  const currentAssets = updateDesign();
 
   checkImagesLoaded(currentAssets.imagesLoaded, loader);
 });
@@ -215,9 +208,7 @@ carouselLeftBtn.addEventListener('pointerdown', (e) => {
 carouselLeftBtn.addEventListener('pointerup', (e) => {
   initBackgroundFn('remove', e.target);
 });
-/* carouselLeftBtn.addEventListener('pointercancel', () => {
-  removeBackgroundImage(carouselLeftBtn);
-}); */
+
 carouselLeftBtn.addEventListener('focus', (e) => {
   e.target.addEventListener('keydown', (key) => {
     if (key.code === 'Enter' || key.code === 'Space') {
@@ -239,9 +230,7 @@ carouselRightBtn.addEventListener('pointerdown', (e) => {
 carouselRightBtn.addEventListener('pointerup', (e) => {
   initBackgroundFn('remove', e.target);
 });
-/* carouselRightBtn.addEventListener('pointercancel', () => {
-  removeBackgroundImage(carouselRightBtn);
-}); */
+
 carouselRightBtn.addEventListener('focus', (e) => {
   e.target.addEventListener('keydown', (key) => {
     if (key.code === 'Enter' || key.code === 'Space') {
@@ -339,21 +328,6 @@ function resetAnimation(elements) {
   });
 }
 
-/*function resetSEAnimation() {
-  const elementsToReset = [
-    { selector: '.scroll-action', animationClass: 'scroll-active-right' },
-    { selector: '.scroll-action-left', animationClass: 'scroll-active-left' },
-  ];
-
-  elementsToReset.forEach(({ selector, animationClass }) => {
-    document.querySelectorAll(selector).forEach((element) => {
-      if (element.classList.contains(animationClass)) {
-        element.classList.remove(animationClass);
-      }
-    });
-  });
-}*/
-
 function booksAnimation() {
   resetAnimation([{ selector: '.menu', animationClass: 'menu-active' }]);
 
@@ -376,10 +350,3 @@ function booksAnimation() {
 
   booksObserver.observe(footer);
 }
-
-/* function resetBooksAnimation() {
-  const page = document.querySelector('.menu');
-  if (page.classList.contains('menu-active')) {
-    page.classList.remove('menu-active');
-  }
-} */
